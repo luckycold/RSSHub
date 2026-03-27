@@ -12,6 +12,7 @@ import metrics from '@/routes/metrics';
 import robotstxt from '@/routes/robots.txt';
 import type { APIRoute, Namespace, Route } from '@/types';
 import { directoryImport } from '@/utils/directory-import';
+import { isWorker } from '@/utils/is-worker';
 import logger from '@/utils/logger';
 
 const __dirname = import.meta.dirname;
@@ -71,10 +72,10 @@ if (config.isPackage) {
             }
             break;
         default:
-            modules = directoryImport({
+            modules = (await directoryImport({
                 targetDirectoryPath: path.join(__dirname, './routes'),
                 importPattern: /\.tsx?$/,
-            }) as typeof modules;
+            })) as typeof modules;
     }
 }
 
@@ -99,6 +100,7 @@ if (Object.keys(modules).length) {
             namespaces[namespace] = Object.assign(
                 {
                     routes: {},
+                    apiRoutes: {},
                 },
                 namespaces[namespace],
                 content.namespace
@@ -256,11 +258,11 @@ for (const namespace in namespaces) {
 app.get('/', index);
 app.get('/healthz', healthz);
 app.get('/robots.txt', robotstxt);
-if (config.debugInfo) {
+if (config.debugInfo !== 'false') {
     // Only enable tracing in debug mode
     app.get('/metrics', metrics);
 }
-if (!config.isPackage && !process.env.VERCEL_ENV) {
+if (!config.isPackage && !process.env.VERCEL_ENV && !isWorker) {
     app.use(
         '/*',
         serveStatic({

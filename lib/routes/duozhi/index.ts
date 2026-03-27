@@ -23,9 +23,7 @@ export const handler = async (ctx: Context): Promise<Data> => {
     const $: CheerioAPI = load(response);
     const language = $('html').attr('lang') ?? 'zh';
 
-    let items: DataItem[] = [];
-
-    items = $('div.post-item')
+    let items: DataItem[] = $('div.post-item')
         .slice(0, limit)
         .toArray()
         .map((el): Element => {
@@ -109,7 +107,9 @@ export const handler = async (ctx: Context): Promise<Data> => {
                     intro: $$('div.subject-desc').text(),
                     description: $$('div.subject-content').html(),
                 });
-                const pubDateStr: string | undefined = $$('div.subject-meta').text()?.split(/发布/)[0];
+                const pubDateStr: string | undefined = $$('div.subject-meta')
+                    .text()
+                    ?.split(/发布/)[0];
                 const categories: string[] = [
                     ...new Set([
                         ...(item.category ?? []),
