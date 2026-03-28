@@ -27350,81 +27350,38 @@
         "title": "Latest",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
-          "/en/trends-and-insights"
+          "/en-cn/insights"
         ],
         "target": "/joneslanglasalle/en/trends-and-insights"
-      },
-      {
-        "title": "Workplace",
-        "docs": "https://docs.rsshub.app/routes/new-media",
-        "source": [
-          "/en/trends-and-insights/workplace"
-        ],
-        "target": "/joneslanglasalle/en/trends-and-insights/workplace"
-      },
-      {
-        "title": "Investor",
-        "docs": "https://docs.rsshub.app/routes/new-media",
-        "source": [
-          "/en/trends-and-insights/investor"
-        ],
-        "target": "/joneslanglasalle/en/trends-and-insights/investor"
-      },
-      {
-        "title": "Cities",
-        "docs": "https://docs.rsshub.app/routes/new-media",
-        "source": [
-          "/en/trends-and-insights/cities"
-        ],
-        "target": "/joneslanglasalle/en/trends-and-insights/cities"
-      },
-      {
-        "title": "Research",
-        "docs": "https://docs.rsshub.app/routes/new-media",
-        "source": [
-          "/en/trends-and-insights/research"
-        ],
-        "target": "/joneslanglasalle/en/trends-and-insights/research"
       },
       {
         "title": "房地产趋势与洞察",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
-          "/zh/trends-and-insights"
+          "/zh-cn/insights"
         ],
         "target": "/joneslanglasalle/zh/trends-and-insights"
-      },
+      }
+    ]
+  },
+  "jll.com": {
+    "_name": "Jones Lang LaSalle",
+    ".": [
       {
-        "title": "办公空间",
+        "title": "Trends & Insights",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
-          "/zh/trends-and-insights/workplace"
+          "/zh-hk/insights"
         ],
-        "target": "/joneslanglasalle/zh/trends-and-insights/workplace"
+        "target": "/joneslanglasalle/zh-hk/trends-and-insights"
       },
       {
-        "title": "投资者",
+        "title": "Trends & Insights",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
-          "/zh/trends-and-insights/investor"
+          "/en-hk/insights"
         ],
-        "target": "/joneslanglasalle/zh/trends-and-insights/investor"
-      },
-      {
-        "title": "城市",
-        "docs": "https://docs.rsshub.app/routes/new-media",
-        "source": [
-          "/zh/trends-and-insights/cities"
-        ],
-        "target": "/joneslanglasalle/zh/trends-and-insights/cities"
-      },
-      {
-        "title": "研究报告",
-        "docs": "https://docs.rsshub.app/routes/new-media",
-        "source": [
-          "/zh/trends-and-insights/research"
-        ],
-        "target": "/joneslanglasalle/zh/trends-and-insights/research"
+        "target": "/joneslanglasalle/en-hk/trends-and-insights"
       }
     ]
   },
@@ -45030,104 +44987,104 @@
       }
     ]
   },
-  "the.bi": {
-    "_name": "The.bi",
+  "river.to": {
+    "_name": "River.to (江河日下)",
     ".": [
       {
         "title": "分类",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
-          "/s/:category"
+          "/occasus/:category"
         ],
         "target": "/theparams=>{const category=params.category;return`/the${category?`/category/${category}`:\"\"}`}"
       },
       {
-        "title": "时局图",
+        "title": "时局",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
-          "/s/rawj7o4ypewv94"
+          "/occasus/rawj7o4ypewv94"
         ],
-        "target": "/the/category/rawj7o4ypewv94"
+        "target": "/the/the/category/rawj7o4ypewv94"
       },
       {
         "title": "剩余价值",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
-          "/s/rawmw7dsta2jew"
+          "/occasus/rawmw7dsta2jew"
         ],
-        "target": "/the/category/rawmw7dsta2jew"
+        "target": "/the/the/category/rawmw7dsta2jew"
       },
       {
-        "title": "打江山",
+        "title": "Beijing",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
-          "/s/rawbcvxkktdkq8"
+          "/occasus/rawbcvxkktdkq8"
         ],
-        "target": "/the/category/rawbcvxkktdkq8"
+        "target": "/the/the/category/rawbcvxkktdkq8"
       },
       {
-        "title": "中国经济",
+        "title": "稳中向好",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
-          "/s/raw4krvx85dh27"
+          "/occasus/raw4krvx85dh27"
         ],
-        "target": "/the/category/raw4krvx85dh27"
+        "target": "/the/the/category/raw4krvx85dh27"
       },
       {
         "title": "水深火热",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
-          "/s/rawtn8jpsc6uvv"
+          "/occasus/rawtn8jpsc6uvv"
         ],
-        "target": "/the/category/rawtn8jpsc6uvv"
+        "target": "/the/the/category/rawtn8jpsc6uvv"
       },
       {
         "title": "东升西降",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
-          "/s/rawai5kd4z15il"
+          "/occasus/rawai5kd4z15il"
         ],
-        "target": "/the/category/rawai5kd4z15il"
+        "target": "/the/the/category/rawai5kd4z15il"
       },
       {
-        "title": "大局 & 大棋",
+        "title": "大局",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
-          "/s/raw2efkzejrsx8"
+          "/occasus/raw2efkzejrsx8"
         ],
-        "target": "/the/category/raw2efkzejrsx8"
+        "target": "/the/the/category/raw2efkzejrsx8"
       },
       {
         "title": "境外势力",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
-          "/s/rawmpalhnlphuc"
+          "/occasus/rawmpalhnlphuc"
         ],
-        "target": "/the/category/rawmpalhnlphuc"
+        "target": "/the/the/category/rawmpalhnlphuc"
       },
       {
         "title": "副刊",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
-          "/s/rawxght2jr2u5z"
+          "/occasus/rawxght2jr2u5z"
         ],
-        "target": "/the/category/rawxght2jr2u5z"
+        "target": "/the/the/category/rawxght2jr2u5z"
       },
       {
         "title": "天高地厚",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
-          "/s/rawrsnh9zakqdx"
+          "/occasus/rawrsnh9zakqdx"
         ],
-        "target": "/the/category/rawrsnh9zakqdx"
+        "target": "/the/the/category/rawrsnh9zakqdx"
       },
       {
         "title": "Oyster",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
-          "/s/rawdhl9hugdfn9"
+          "/occasus/rawdhl9hugdfn9"
         ],
-        "target": "/the/category/rawdhl9hugdfn9"
+        "target": "/the/the/category/rawdhl9hugdfn9"
       }
     ]
   },

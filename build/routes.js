@@ -1216,7 +1216,8 @@ export default {
         ],
         "name": "文庫",
         "maintainers": [
-          "nczitzk"
+          "nczitzk",
+          "pseudoyu"
         ],
         "url": "jmcomic.group/",
         "description": "分类\n\n| 全部 | 紳夜食堂 | 遊戲文庫 | JG GAMES | 模型山下 |\n| ---- | -------- | -------- | -------- | -------- |\n|      | dinner   | raiders  | jg       | figure   |",
@@ -1250,7 +1251,8 @@ export default {
         ],
         "name": "专辑",
         "maintainers": [
-          "nczitzk"
+          "nczitzk",
+          "pseudoyu"
         ],
         "url": "jmcomic.group/",
         "description": "::: tip\n  专辑 id 不包括 URL 中标题的部分。\n:::",
@@ -1287,7 +1289,8 @@ export default {
         ],
         "name": "成人 A 漫",
         "maintainers": [
-          "nczitzk"
+          "nczitzk",
+          "pseudoyu"
         ],
         "url": "jmcomic.group/",
         "description": "分类\n\n| 全部 | 其他漫畫 | 同人   | 韓漫   | 美漫   | 短篇  | 单本   |\n| ---- | -------- | ------ | ------ | ------ | ----- | ------ |\n| all  | another  | doujin | hanman | meiman | short | single |\n\n  时间范围\n\n| 全部 | 今天 | 这周 | 本月 |\n| ---- | ---- | ---- | ---- |\n| a    | t    | w    | m    |\n\n  排列顺序\n\n| 最新 | 最多点阅的 | 最多图片 | 最高评分 | 最多评论 | 最多爱心 |\n| ---- | ---------- | -------- | -------- | -------- | -------- |\n| mr   | mv         | mp       | tr       | md       | tf       |\n\n  关键字（供参考）\n\n| YAOI | 女性向 | NTR | 非 H | 3D | 獵奇 |\n| ---- | ------ | --- | ---- | -- | ---- |",
@@ -1326,7 +1329,8 @@ export default {
         ],
         "name": "搜索",
         "maintainers": [
-          "nczitzk"
+          "nczitzk",
+          "pseudoyu"
         ],
         "url": "jmcomic.group/",
         "description": "::: tip\n  关键字必须超过两个字，这是来自网站的限制。\n:::",
@@ -21748,7 +21752,8 @@ export default {
         },
         "name": "分类",
         "maintainers": [
-          "nczitzk"
+          "nczitzk",
+          "pseudoyu"
         ],
         "description": "| 全部 | 要闻 | 商业 | 快讯 | 财富 | 生活 |\n| ---- | ---- | ---- | ---- | ---- | ---- |\n| 0    | 1    | 2    | 3    | 8    | 6    |",
         "location": "index.ts",
@@ -35782,7 +35787,8 @@ export default {
         "name": "Activity Tracker",
         "url": "digitalpolicyalert.org",
         "maintainers": [
-          "nczitzk"
+          "nczitzk",
+          "pseudoyu"
         ],
         "example": "/digitalpolicyalert/activity-tracker",
         "parameters": {
@@ -36069,7 +36075,9 @@ export default {
           "/:link{.+}"
         ],
         "name": "Unknown",
-        "maintainers": [],
+        "maintainers": [
+          "pseudoyu"
+        ],
         "location": "discuz.ts",
         "module": () => import('@/routes/discuz/discuz.ts')
       },
@@ -36080,7 +36088,9 @@ export default {
           "/:link{.+}"
         ],
         "name": "Unknown",
-        "maintainers": [],
+        "maintainers": [
+          "pseudoyu"
+        ],
         "location": "discuz.ts",
         "module": () => import('@/routes/discuz/discuz.ts')
       },
@@ -36091,7 +36101,9 @@ export default {
           "/:link{.+}"
         ],
         "name": "Unknown",
-        "maintainers": [],
+        "maintainers": [
+          "pseudoyu"
+        ],
         "location": "discuz.ts",
         "module": () => import('@/routes/discuz/discuz.ts')
       }
@@ -42048,7 +42060,8 @@ export default {
           "creator": "fanbox user name"
         },
         "maintainers": [
-          "KarasuShin"
+          "KarasuShin",
+          "pseudoyu"
         ],
         "name": "Creator",
         "features": {
@@ -68200,7 +68213,8 @@ export default {
         "name": "界面号",
         "example": "/jiemian/account/main/1",
         "maintainers": [
-          "nczitzk"
+          "nczitzk",
+          "pseudoyu"
         ],
         "description": "| [财经号](https://www.jiemian.com/account/main/1.html) | [城市号](https://www.jiemian.com/account/main/2.html) | [媒体号](https://www.jiemian.com/account/main/3.html) |\n| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |\n| 1                                                     | 2                                                     | 3                                                     |\n",
         "location": "account.ts",
@@ -68215,7 +68229,8 @@ export default {
         "example": "/jiemian/lists/65",
         "maintainers": [
           "WenhuWee",
-          "nczitzk"
+          "nczitzk",
+          "pseudoyu"
         ],
         "description": "| [首页](https://www.jiemian.com) | [商业](https://www.jiemian.com/lists/2.html) | [财经](https://www.jiemian.com/lists/800.html) | [新闻](https://www.jiemian.com/lists/801.html) | [文化生活](https://www.jiemian.com/lists/130.html) | [快报](https://www.jiemian.com/lists/4.html) |\n| ------------------------------- | -------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- | -------------------------------------------------- | -------------------------------------------- |\n|                                 | 2                                            | 800                                            | 801                                            | 130                                                | 4                                            |\n\n::: details 更多分类\n\n#### [首页](https://www.jiemian.com)\n\n| [科技](https://www.jiemian.com/lists/65.html) | [金融](https://www.jiemian.com/lists/9.html) | [证券](https://www.jiemian.com/lists/112.html) | [地产](https://www.jiemian.com/lists/62.html) | [汽车](https://www.jiemian.com/lists/51.html) | [健康](https://www.jiemian.com/lists/472.html) |\n| --------------------------------------------- | -------------------------------------------- | ---------------------------------------------- | --------------------------------------------- | --------------------------------------------- | ---------------------------------------------- |\n| 65                                            | 9                                            | 112                                            | 62                                            | 51                                            | 472                                            |\n\n| [大湾区](https://www.jiemian.com/lists/680.html) | [元宇宙](https://www.jiemian.com/lists/704.html) | [文旅](https://www.jiemian.com/lists/105.html) | [数据](https://www.jiemian.com/lists/154.html) | [ESG](https://www.jiemian.com/lists/712.html) | [双碳](https://www.jiemian.com/lists/877.html) |\n| ------------------------------------------------ | ------------------------------------------------ | ---------------------------------------------- | ---------------------------------------------- | --------------------------------------------- | ---------------------------------------------- |\n| 680                                              | 704                                              | 105                                            | 154                                            | 712                                           | 877                                            |\n\n| [电厂](https://www.jiemian.com/lists/872.html) |\n| ---------------------------------------------- |\n| 872                                            |\n\n#### [商业](https://www.jiemian.com/lists/2.html)\n\n| [科技](https://www.jiemian.com/lists/65.html) | [地产](https://www.jiemian.com/lists/62.html) | [ 汽车](https://www.jiemian.com/lists/51.html) | [消费](https://www.jiemian.com/lists/31.html) | [工业](https://www.jiemian.com/lists/28.html) | [时尚](https://www.jiemian.com/lists/68.html) |\n| --------------------------------------------- | --------------------------------------------- | ---------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |\n| 65                                            | 62                                            | 51                                             | 31                                            | 28                                            | 68                                            |\n\n| [交通](https://www.jiemian.com/lists/30.html) | [医药](https://www.jiemian.com/lists/472.html) | [互联网](https://www.jiemian.com/lists/851.html) | [创投 ](https://www.jiemian.com/lists/858.html) | [能源](https://www.jiemian.com/lists/856.html) | [数码](https://www.jiemian.com/lists/853.html) |\n| --------------------------------------------- | ---------------------------------------------- | ------------------------------------------------ | ----------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |\n| 30                                            | 472                                            | 851                                              | 858                                             | 856                                            | 853                                            |\n\n| [教育](https://www.jiemian.com/lists/256.html) | [食品](https://www.jiemian.com/lists/845.html) | [新能源](https://www.jiemian.com/lists/857.html) | [家电](https://www.jiemian.com/lists/850.html) | [健康](https://www.jiemian.com/lists/854.html) | [酒业](https://www.jiemian.com/lists/676.html) |\n| ---------------------------------------------- | ---------------------------------------------- | ------------------------------------------------ | ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |\n| 256                                            | 845                                            | 857                                              | 850                                            | 854                                            | 676                                            |\n\n| [物流](https://www.jiemian.com/lists/841.html) | [零售](https://www.jiemian.com/lists/847.html) | [美妆](https://www.jiemian.com/lists/838.html) | [楼市](https://www.jiemian.com/city/main/181.html) | [家居](https://www.jiemian.com/lists/694.html) | [餐饮](https://www.jiemian.com/lists/848.html) |\n| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- | -------------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |\n| 841                                            | 847                                            | 838                                            | city/main/181                                      | 694                                            | 848                                            |\n\n| [日用](https://www.jiemian.com/lists/846.html) | [企服](https://www.jiemian.com/lists/852.html) | [珠宝](https://www.jiemian.com/lists/839.html) | [腕表](https://www.jiemian.com/lists/840.html) | [ 商学院](https://www.jiemian.com/lists/605.html) | [元宇宙](https://www.jiemian.com/lists/704.html) |\n| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- | ------------------------------------------------- | ------------------------------------------------ |\n| 846                                            | 852                                            | 839                                            | 840                                            | 605                                               | 704                                              |\n\n| [电厂](https://www.jiemian.com/lists/872.html) | [农业](https://www.jiemian.com/lists/883.html) |\n| ---------------------------------------------- | ---------------------------------------------- |\n| 872                                            | 883                                            |\n\n#### [财经](https://www.jiemian.com/lists/800.html)\n\n| [金融](https://www.jiemian.com/lists/9.html) | [投资](https://www.jiemian.com/lists/86.html) | [证券](https://www.jiemian.com/lists/112.html) | [IPO](https://www.jiemian.com/lists/699.html) | [宏观](https://www.jiemian.com/lists/174.html) | [股市](https://www.jiemian.com/lists/418.html) |\n| -------------------------------------------- | --------------------------------------------- | ---------------------------------------------- | --------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |\n| 9                                            | 86                                            | 112                                            | 699                                           | 174                                            | 418                                            |\n\n| [财富](https://www.jiemian.com/lists/410.html) | [有连云](https://www.jiemian.com/lists/889.html) |\n| ---------------------------------------------- | ------------------------------------------------ |\n| 410                                            | 889                                              |\n\n#### [新闻](https://www.jiemian.com/lists/801.html)\n\n| [天下](https://www.jiemian.com/lists/32.html) | [中国](https://www.jiemian.com/lists/71.html) | [ 评论](https://www.jiemian.com/lists/8.html) | [数据](https://www.jiemian.com/lists/154.html) | [职场](https://www.jiemian.com/lists/50.html) | [国是](https://www.jiemian.com/lists/422.html) |\n| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | ---------------------------------------------- | --------------------------------------------- | ---------------------------------------------- |\n| 32                                            | 71                                            | 8                                             | 154                                            | 50                                            | 422                                            |\n\n| [体育](https://www.jiemian.com/lists/82.html) | [文娱](https://www.jiemian.com/lists/63.html) | [ 影像](https://www.jiemian.com/lists/225.html) | [营销](https://www.jiemian.com/lists/49.html) | [大 湾区](https://www.jiemian.com/lists/680.html) | [ESG](https://www.jiemian.com/lists/712.html) |\n| --------------------------------------------- | --------------------------------------------- | ----------------------------------------------- | --------------------------------------------- | ------------------------------------------------- | --------------------------------------------- |\n| 82                                            | 63                                            | 225                                             | 49                                            | 680                                               | 712                                           |\n\n| [双碳](https://www.jiemian.com/lists/877.html) | [长三角](https://www.jiemian.com/lists/917.html) |\n| ---------------------------------------------- | ------------------------------------------------ |\n| 877                                            | 917                                              |\n\n#### [文化生活](https://www.jiemian.com/lists/130.html)\n\n| [文化](https://www.jiemian.com/lists/130.html) | [文旅](https://www.jiemian.com/lists/105.html) | [生活方式](https://www.jiemian.com/lists/135.html) | [美食美酒](https://www.jiemian.com/lists/865.html) | [艺术](https://www.jiemian.com/lists/643.html) | [游戏](https://www.jiemian.com/lists/118.html) |\n| ---------------------------------------------- | ---------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |\n| 130                                            | 105                                            | 135                                                | 865                                                | 643                                            | 118                                            |\n\n| [正午](https://www.jiemian.com/lists/53.html) | [箭厂](https://www.jiemian.com/video/lists/195_1.html) |\n| --------------------------------------------- | ------------------------------------------------------ |\n| 53                                            | video/lists/195_1                                     |\n\n#### [快报](https://www.jiemian.com/lists/4.html)\n\n| [今日热点](https://www.jiemian.com/lists/1324kb.html) | [公司头条](https://www.jiemian.com/lists/1322kb.html) | [股市前沿](https://www.jiemian.com/lists/1327kb.html) | [监管通报](https://www.jiemian.com/lists/1330kb.html) | [财经速览](https://www.jiemian.com/lists/1326kb.html) | [时事追踪](https://www.jiemian.com/lists/1325kb.html) |\n| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |\n| 1324kb                                                | 1322kb                                                | 1327kb                                                | 1330kb                                                | 1326kb                                                | 1325kb                                                |\n\n:::",
         "location": "lists.ts",
@@ -68229,7 +68244,8 @@ export default {
         "name": "专题",
         "example": "/jiemian/special/1192",
         "maintainers": [
-          "nczitzk"
+          "nczitzk",
+          "pseudoyu"
         ],
         "location": "special.ts",
         "module": () => import('@/routes/jiemian/special.ts')
@@ -68242,7 +68258,8 @@ export default {
         "name": "视频",
         "example": "/jiemian/video/lists/258_1",
         "maintainers": [
-          "nczitzk"
+          "nczitzk",
+          "pseudoyu"
         ],
         "description": "| [界面 Vnews](https://www.jiemian.com/video/lists/258_1.html) | [直播](https://www.jiemian.com/videoLive/lists_1.html) | [箭厂](https://www.jiemian.com/video/lists/195_1.html) | [面谈](https://www.jiemian.com/video/lists/111_1.html) | [品牌创酷](https://www.jiemian.com/video/lists/226_1.html) | [番 茄社](https://www.jiemian.com/video/lists/567_1.html) |\n| ------------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ---------------------------------------------------------- | --------------------------------------------------------- |\n| 258_1                                                       | videoLive/lists_1                                     | 195_1                                                 | 111_1                                                 | 226_1                                                     | 567_1                                                    |\n\n| [商业微史记](https://www.jiemian.com/video/lists/882_1.html) |\n| ------------------------------------------------------------ |\n| 882_1                                                       |",
         "location": "video.ts",
@@ -68256,7 +68273,8 @@ export default {
         "name": "VIP",
         "example": "/jiemian/pro/lists/12",
         "maintainers": [
-          "nczitzk"
+          "nczitzk",
+          "pseudoyu"
         ],
         "description": "| [投资早晚报](https://www.jiemian.com/pro/lists/12.html) | [宏观晚 6 点](https://www.jiemian.com/pro/lists/20.html) | [打新早报](https://www.jiemian.com/pro/lists/21.html) | [盘前机会前瞻](https://www.jiemian.com/pro/lists/13.html) | [公告快评](https://www.jiemian.com/pro/lists/14.html) | [盘中必读](https://www.jiemian.com/pro/lists/15.html) |\n| ------------------------------------------------------- | -------------------------------------------------------- | ----------------------------------------------------- | --------------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |\n| 12                                                      | 20                                                       | 21                                                    | 13                                                        | 14                                                    | 15                                                    |\n\n| [金股挖掘](https://www.jiemian.com/pro/lists/16.html) | [调研早知道](https://www.jiemian.com/pro/lists/17.html) | [研报新知](https://www.jiemian.com/pro/lists/18.html) | [大势侦察](https://www.jiemian.com/pro/lists/1.html) | [市场风向标](https://www.jiemian.com/pro/lists/19.html) |\n| ----------------------------------------------------- | ------------------------------------------------------- | ----------------------------------------------------- | ---------------------------------------------------- | ------------------------------------------------------- |\n| 16                                                    | 17                                                      | 18                                                    | 1                                                    | 19                                                      |\n",
         "location": "vip.ts",
@@ -68686,7 +68704,8 @@ export default {
         },
         "name": "分类",
         "maintainers": [
-          "nczitzk"
+          "nczitzk",
+          "pseudoyu"
         ],
         "description": "| 政策    | 行情         | DeFi | 矿业  | 以太坊 2.0 |\n| ------- | ------------ | ---- | ----- | ---------- |\n| zhengce | fenxishishuo | defi | kuang | 以太坊 2.0 |\n\n| 产业     | IPFS | 技术 | 百科  | 研报          |\n| -------- | ---- | ---- | ----- | ------------- |\n| industry | IPFS | tech | baike | capitalmarket |",
         "location": "catalogue.ts",
@@ -68741,7 +68760,8 @@ export default {
         },
         "name": "快讯",
         "maintainers": [
-          "nczitzk"
+          "nczitzk",
+          "pseudoyu"
         ],
         "description": "| 全部 | 精选 | 政策 | 数据 | NFT | 项目 |\n| ---- | ---- | ---- | ---- | --- | ---- |\n| 0    | 1    | 2    | 3    | 4   | 5    |",
         "location": "lives.ts",
@@ -68828,7 +68848,8 @@ export default {
         },
         "name": "首页",
         "maintainers": [
-          "nczitzk"
+          "nczitzk",
+          "pseudoyu"
         ],
         "description": "| 头条   | 独家 | 铭文    | 产业       | 项目 |\n| ------ | ---- | ------- | ---------- | ---- |\n| 政策   | AI   | Web 3.0 | 以太坊 2.0 | DeFi |\n| Layer2 | NFT  | DAO     | 百科       |      |",
         "location": "timeline.ts",
@@ -70781,17 +70802,17 @@ export default {
         ],
         "example": "/joneslanglasalle/en/trends-and-insights",
         "parameters": {
-          "language": "Language, `zh` by default",
+          "language": "Language, `zh` for China Mainland Chinese, `en` for China Mainland English, `zh-hk` for Hong Kong Chinese, `en-hk` for Hong Kong English, `zh` by default",
           "category": "Category, `trends-and-insights` by default"
         },
-        "description": "::: tip\nIf you subscribe to [Trends & Insights](https://www.joneslanglasalle.com.cn/en/trends-and-insights)，where the URL is `https://www.joneslanglasalle.com.cn/en/trends-and-insights`, extract the part `https://joneslanglasalle.com.cn/` to the end. Use `zh` and `trends-and-insights` as the parameters to fill in. Therefore, the route will be [`/joneslanglasalle/en/trends-and-insights`](https://rsshub.app/joneslanglasalle/en/trends-and-insights).\n:::\n\n| Category  | ID                            |\n| --------- | ----------------------------- |\n| Latest    | trends-and-insights           |\n| Workplace | trends-and-insights/workplace |\n| Investor  | trends-and-insights/investor  |\n| Cities    | trends-and-insights/cities    |\n| Research  | trends-and-insights/research  |\n",
+        "description": "::: tip\nIf you subscribe to [Trends & Insights (China)](https://www.joneslanglasalle.com.cn/en-cn/insights), use `en` as the language. For [Hong Kong Insights](https://www.jll.com/zh-hk/insights), use `zh-hk` as the language.\n:::\n\n| Region         | Language | Parameter |\n| -------------- | -------- | --------- |\n| China Mainland | 中文     | zh        |\n| China Mainland | English  | en        |\n| Hong Kong      | 中文     | zh-hk     |\n| Hong Kong      | English  | en-hk     |\n",
         "categories": [
           "new-media"
         ],
         "features": {
           "requireConfig": false,
           "requirePuppeteer": false,
-          "antiCrawler": false,
+          "antiCrawler": true,
           "supportRadar": true,
           "supportBT": false,
           "supportPodcast": false,
@@ -70806,72 +70827,28 @@ export default {
           {
             "title": "Latest",
             "source": [
-              "joneslanglasalle.com.cn/en/trends-and-insights"
+              "joneslanglasalle.com.cn/en-cn/insights"
             ],
             "target": "/en/trends-and-insights"
           },
           {
-            "title": "Workplace",
-            "source": [
-              "joneslanglasalle.com.cn/en/trends-and-insights/workplace"
-            ],
-            "target": "/en/trends-and-insights/workplace"
-          },
-          {
-            "title": "Investor",
-            "source": [
-              "joneslanglasalle.com.cn/en/trends-and-insights/investor"
-            ],
-            "target": "/en/trends-and-insights/investor"
-          },
-          {
-            "title": "Cities",
-            "source": [
-              "joneslanglasalle.com.cn/en/trends-and-insights/cities"
-            ],
-            "target": "/en/trends-and-insights/cities"
-          },
-          {
-            "title": "Research",
-            "source": [
-              "joneslanglasalle.com.cn/en/trends-and-insights/research"
-            ],
-            "target": "/en/trends-and-insights/research"
-          },
-          {
             "title": "房地产趋势与洞察",
             "source": [
-              "joneslanglasalle.com.cn/zh/trends-and-insights"
+              "joneslanglasalle.com.cn/zh-cn/insights"
             ],
             "target": "/zh/trends-and-insights"
           },
           {
-            "title": "办公空间",
             "source": [
-              "joneslanglasalle.com.cn/zh/trends-and-insights/workplace"
+              "jll.com/zh-hk/insights"
             ],
-            "target": "/zh/trends-and-insights/workplace"
+            "target": "/zh-hk/trends-and-insights"
           },
           {
-            "title": "投资者",
             "source": [
-              "joneslanglasalle.com.cn/zh/trends-and-insights/investor"
+              "jll.com/en-hk/insights"
             ],
-            "target": "/zh/trends-and-insights/investor"
-          },
-          {
-            "title": "城市",
-            "source": [
-              "joneslanglasalle.com.cn/zh/trends-and-insights/cities"
-            ],
-            "target": "/zh/trends-and-insights/cities"
-          },
-          {
-            "title": "研究报告",
-            "source": [
-              "joneslanglasalle.com.cn/zh/trends-and-insights/research"
-            ],
-            "target": "/zh/trends-and-insights/research"
+            "target": "/en-hk/trends-and-insights"
           }
         ],
         "view": 0,
@@ -70880,14 +70857,15 @@ export default {
           "name": "房地产趋势与洞察",
           "url": "joneslanglasalle.com.cn",
           "maintainers": [
-            "nczitzk"
+            "nczitzk",
+            "pseudoyu"
           ],
           "example": "/joneslanglasalle/zh/trends-and-insights",
           "parameters": {
-            "language": "语言，默认为 `zh`，可在对应分类页 URL 中找到",
-            "category": "分类，默认为 `trends-and-insights`，可在对应分类页 URL 中找到"
+            "language": "语言，`zh` 为中国大陆中文，`en` 为中国大陆英文，`zh-hk` 为香港中文，`en-hk` 为香港英文，默认为 `zh`",
+            "category": "分类，默认为 `trends-and-insights`"
           },
-          "description": "::: tip\n若订阅 [房地产趋势与洞察](https://www.joneslanglasalle.com.cn/zh/trends-and-insights)，网址为 `https://www.joneslanglasalle.com.cn/zh/trends-and-insights`，请截取 `https://joneslanglasalle.com.cn/` 到末尾的部分 `zh` 和 `trends-and-insights` 作为 `language` 和 `category` 参数填入，此时目标路由为 [`/joneslanglasalle/zh/trends-and-insights`](https://rsshub.app/joneslanglasalle/zh/trends-and-insights)。\n:::\n\n| 分类名称   | 分类 ID                       |\n| ---------- | ----------------------------- |\n| 趋势及洞察 | trends-and-insights           |\n| 办公空间   | trends-and-insights/workplace |\n| 投资者     | trends-and-insights/investor  |\n| 城市       | trends-and-insights/cities    |\n| 研究报告   | trends-and-insights/research  |\n"
+          "description": "::: tip\n若订阅 [中国大陆洞察](https://www.joneslanglasalle.com.cn/zh-cn/insights)，语言参数为 `zh`。若订阅 [香港洞察](https://www.jll.com/zh-hk/insights)，语言参数为 `zh-hk`。\n:::\n\n| 地区   | 语言    | 参数  |\n| ------ | ------- | ----- |\n| 中国大陆 | 中文  | zh    |\n| 中国大陆 | English | en    |\n| 香港   | 中文    | zh-hk |\n| 香港   | English | en-hk |\n"
         },
         "location": "index.ts",
         "module": () => import('@/routes/joneslanglasalle/index.ts')
@@ -87057,6 +87035,7 @@ export default {
           "mode": "mode, `simple` to only show cover, `detail` to show all pages, `torrent` to include Magnet URI, need login, refer to [Route-specific Configurations](https://docs.rsshub.app/deploy/config#route-specific-configurations), default to `simple`"
         },
         "features": {
+          "requirePuppeteer": false,
           "antiCrawler": true,
           "supportBT": true,
           "nsfw": true
@@ -87072,7 +87051,8 @@ export default {
         "name": "Filter",
         "maintainers": [
           "MegrezZhu",
-          "hoilc"
+          "hoilc",
+          "pseudoyu"
         ],
         "location": "index.ts",
         "module": () => import('@/routes/nhentai/index.ts')
@@ -87085,6 +87065,7 @@ export default {
           "mode": "mode, `simple` to only show cover, `detail` to show all pages, `torrent` to include Magnet URI, need login, refer to [Route-specific Configurations](https://docs.rsshub.app/deploy/config#route-specific-configurations), default to `simple`"
         },
         "features": {
+          "requirePuppeteer": false,
           "antiCrawler": true,
           "supportBT": true,
           "nsfw": true
@@ -87100,7 +87081,8 @@ export default {
         "name": "Advanced Search",
         "maintainers": [
           "MegrezZhu",
-          "hoilc"
+          "hoilc",
+          "pseudoyu"
         ],
         "location": "search.ts",
         "module": () => import('@/routes/nhentai/search.ts')
@@ -101075,8 +101057,12 @@ export default {
         "categories": [
           "government"
         ],
+        "features": {
+          "antiCrawler": true
+        },
         "maintainers": [
-          "huanfe1"
+          "huanfe1",
+          "pseudoyu"
         ],
         "url": "qiche365.org.cn/index/recall/index.html",
         "location": "recall.ts",
@@ -101102,7 +101088,7 @@ export default {
         "features": {
           "requireConfig": false,
           "requirePuppeteer": false,
-          "antiCrawler": false,
+          "antiCrawler": true,
           "supportBT": false,
           "supportPodcast": false,
           "supportScihub": false
@@ -101116,7 +101102,8 @@ export default {
         ],
         "name": "作者",
         "maintainers": [
-          "miles170"
+          "miles170",
+          "pseudoyu"
         ],
         "location": "author.tsx",
         "module": () => import('@/routes/qidian/author.tsx')
@@ -101134,7 +101121,7 @@ export default {
         "features": {
           "requireConfig": false,
           "requirePuppeteer": false,
-          "antiCrawler": false,
+          "antiCrawler": true,
           "supportBT": false,
           "supportPodcast": false,
           "supportScihub": false
@@ -101148,7 +101135,8 @@ export default {
         ],
         "name": "作品章节",
         "maintainers": [
-          "fuzy112"
+          "fuzy112",
+          "pseudoyu"
         ],
         "location": "chapter.ts",
         "module": () => import('@/routes/qidian/chapter.ts')
@@ -101165,7 +101153,7 @@ export default {
         "features": {
           "requireConfig": false,
           "requirePuppeteer": false,
-          "antiCrawler": false,
+          "antiCrawler": true,
           "supportBT": false,
           "supportPodcast": false,
           "supportScihub": false
@@ -101179,7 +101167,8 @@ export default {
         ],
         "name": "讨论区",
         "maintainers": [
-          "fuzy112"
+          "fuzy112",
+          "pseudoyu"
         ],
         "location": "forum.ts",
         "module": () => import('@/routes/qidian/forum.ts')
@@ -101196,7 +101185,7 @@ export default {
         "features": {
           "requireConfig": false,
           "requirePuppeteer": false,
-          "antiCrawler": false,
+          "antiCrawler": true,
           "supportBT": false,
           "supportPodcast": false,
           "supportScihub": false
@@ -101211,7 +101200,8 @@ export default {
         ],
         "name": "限时免费下期预告",
         "maintainers": [
-          "LogicJake"
+          "LogicJake",
+          "pseudoyu"
         ],
         "url": "www.qidian.com/free",
         "location": "free-next.ts",
@@ -101229,7 +101219,7 @@ export default {
         "features": {
           "requireConfig": false,
           "requirePuppeteer": false,
-          "antiCrawler": false,
+          "antiCrawler": true,
           "supportBT": false,
           "supportPodcast": false,
           "supportScihub": false
@@ -101244,7 +101234,8 @@ export default {
         ],
         "name": "限时免费",
         "maintainers": [
-          "LogicJake"
+          "LogicJake",
+          "pseudoyu"
         ],
         "url": "www.qidian.com/free",
         "location": "free.ts",
@@ -103598,7 +103589,8 @@ export default {
         ],
         "name": "Generic News",
         "maintainers": [
-          "nczitzk"
+          "nczitzk",
+          "pseudoyu"
         ],
         "url": "rfi.fr",
         "example": "/rfi",
@@ -120449,15 +120441,16 @@ export default {
       "/:filter{.+}?": {
         "path": "/:filter{.+}?",
         "name": "分类",
-        "url": "the.bi",
+        "url": "river.to",
         "maintainers": [
-          "nczitzk"
+          "nczitzk",
+          "pseudoyu"
         ],
         "example": "/the",
         "parameters": {
           "filter": "过滤器，见下方描述"
         },
-        "description": "::: tip\n  如果你想订阅特定类别或标签，可以在路由中填写 filter 参数。`/category/rawmw7dsta2jew` 可以实现订阅 [剩余价值](https://the.bi/s/rawmw7dsta2jew) 类别。此时，路由是 [`/the/category/rawmw7dsta2jew/`](https://rsshub.app/the/category/rawmw7dsta2jew).\n\n  你还可以订阅多个类别。`/category/rawmw7dsta2jew,rawbcvxkktdkq8/` 可以实现同时订阅 [剩余价值](https://the.bi/s/rawmw7dsta2jew) 和 [打江山](https://the.bi/s/rawbcvxkktdkq8) 两个类别。此时，路由是 [`/the/category/rawmw7dsta2jew,rawbcvxkktdkq8`](https://rsshub.app/the/category/rawmw7dsta2jew,rawbcvxkktdkq8).\n\n  类别和标签也可以合并订阅。`/category/rawmw7dsta2jew/tag/raweekl3na8trq` 订阅 [剩余价值](https://the.bi/s/rawmw7dsta2jew) 类别和 [动物](https://the.bi/s/raweekl3na8trq) 标签。此时，路由是 [`/the/category/rawmw7dsta2jew/tag/raweekl3na8trq`](https://rsshub.app/the/category/rawmw7dsta2jew/tag/raweekl3na8trq).\n\n  你还可以搜索关键字。`/search/中国` 搜索关键字 [中国](https://the.bi/s/?s=中国)。在这种情况下，路径是 [`/the/search/中国`](https://rsshub.app/the/search/中国).\n:::\n\n| 分类                                           | ID                                                               |\n| ---------------------------------------------- | ---------------------------------------------------------------- |\n| [时局图](https://the.bi/s/rawj7o4ypewv94)      | [rawj7o4ypewv94](https://rsshub.app/the/category/rawj7o4ypewv94) |\n| [剩余价值](https://the.bi/s/rawmw7dsta2jew)    | [rawmw7dsta2jew](https://rsshub.app/the/category/rawmw7dsta2jew) |\n| [打江山](https://the.bi/s/rawbcvxkktdkq8)      | [rawbcvxkktdkq8](https://rsshub.app/the/category/rawbcvxkktdkq8) |\n| [中国经济](https://the.bi/s/raw4krvx85dh27)    | [raw4krvx85dh27](https://rsshub.app/the/category/raw4krvx85dh27) |\n| [水深火热](https://the.bi/s/rawtn8jpsc6uvv)    | [rawtn8jpsc6uvv](https://rsshub.app/the/category/rawtn8jpsc6uvv) |\n| [东升西降](https://the.bi/s/rawai5kd4z15il)    | [rawai5kd4z15il](https://rsshub.app/the/category/rawai5kd4z15il) |\n| [大局 & 大棋](https://the.bi/s/raw2efkzejrsx8) | [raw2efkzejrsx8](https://rsshub.app/the/category/raw2efkzejrsx8) |\n| [境外势力](https://the.bi/s/rawmpalhnlphuc)    | [rawmpalhnlphuc](https://rsshub.app/the/category/rawmpalhnlphuc) |\n| [副刊](https://the.bi/s/rawxght2jr2u5z)        | [rawxght2jr2u5z](https://rsshub.app/the/category/rawxght2jr2u5z) |\n| [天高地厚](https://the.bi/s/rawrsnh9zakqdx)    | [rawrsnh9zakqdx](https://rsshub.app/the/category/rawrsnh9zakqdx) |\n| [Oyster](https://the.bi/s/rawdhl9hugdfn9)      | [rawdhl9hugdfn9](https://rsshub.app/the/category/rawdhl9hugdfn9) |\n  ",
+        "description": "::: tip\n  如果你想订阅特定类别或出版物，可以在路由中填写 filter 参数。\n\n  `/category/rawj7o4ypewv94` 可以实现订阅 [时局](https://river.to/occasus/rawj7o4ypewv94) 类别。此时，路由是 [`/the/category/rawj7o4ypewv94/`](https://rsshub.app/the/category/rawj7o4ypewv94).\n\n  也可以直接使用 slug：[`/the/rawj7o4ypewv94`](https://rsshub.app/the/rawj7o4ypewv94)\n:::\n\n| 分类                                                      | ID                                                               |\n| --------------------------------------------------------- | ---------------------------------------------------------------- |\n| [时局](https://river.to/occasus/rawj7o4ypewv94)           | [rawj7o4ypewv94](https://rsshub.app/the/category/rawj7o4ypewv94) |\n| [剩余价值](https://river.to/occasus/rawmw7dsta2jew)       | [rawmw7dsta2jew](https://rsshub.app/the/category/rawmw7dsta2jew) |\n| [Beijing](https://river.to/occasus/rawbcvxkktdkq8)        | [rawbcvxkktdkq8](https://rsshub.app/the/category/rawbcvxkktdkq8) |\n| [稳中向好](https://river.to/occasus/raw4krvx85dh27)       | [raw4krvx85dh27](https://rsshub.app/the/category/raw4krvx85dh27) |\n| [水深火热](https://river.to/occasus/rawtn8jpsc6uvv)       | [rawtn8jpsc6uvv](https://rsshub.app/the/category/rawtn8jpsc6uvv) |\n| [东升西降](https://river.to/occasus/rawai5kd4z15il)       | [rawai5kd4z15il](https://rsshub.app/the/category/rawai5kd4z15il) |\n| [大局](https://river.to/occasus/raw2efkzejrsx8)           | [raw2efkzejrsx8](https://rsshub.app/the/category/raw2efkzejrsx8) |\n| [境外势力](https://river.to/occasus/rawmpalhnlphuc)       | [rawmpalhnlphuc](https://rsshub.app/the/category/rawmpalhnlphuc) |\n| [副刊](https://river.to/occasus/rawxght2jr2u5z)           | [rawxght2jr2u5z](https://rsshub.app/the/category/rawxght2jr2u5z) |\n| [天高地厚](https://river.to/occasus/rawrsnh9zakqdx)       | [rawrsnh9zakqdx](https://rsshub.app/the/category/rawrsnh9zakqdx) |\n| [Oyster](https://river.to/occasus/rawdhl9hugdfn9)         | [rawdhl9hugdfn9](https://rsshub.app/the/category/rawdhl9hugdfn9) |\n  ",
         "categories": [
           "new-media"
         ],
@@ -120473,85 +120466,85 @@ export default {
         "radar": [
           {
             "source": [
-              "the.bi/s/:category?"
+              "river.to/occasus/:category?"
             ]
           },
           {
-            "title": "时局图",
+            "title": "时局",
             "source": [
-              "the.bi/s/rawj7o4ypewv94"
+              "river.to/occasus/rawj7o4ypewv94"
             ],
-            "target": "/category/rawj7o4ypewv94"
+            "target": "/the/category/rawj7o4ypewv94"
           },
           {
             "title": "剩余价值",
             "source": [
-              "the.bi/s/rawmw7dsta2jew"
+              "river.to/occasus/rawmw7dsta2jew"
             ],
-            "target": "/category/rawmw7dsta2jew"
+            "target": "/the/category/rawmw7dsta2jew"
           },
           {
-            "title": "打江山",
+            "title": "Beijing",
             "source": [
-              "the.bi/s/rawbcvxkktdkq8"
+              "river.to/occasus/rawbcvxkktdkq8"
             ],
-            "target": "/category/rawbcvxkktdkq8"
+            "target": "/the/category/rawbcvxkktdkq8"
           },
           {
-            "title": "中国经济",
+            "title": "稳中向好",
             "source": [
-              "the.bi/s/raw4krvx85dh27"
+              "river.to/occasus/raw4krvx85dh27"
             ],
-            "target": "/category/raw4krvx85dh27"
+            "target": "/the/category/raw4krvx85dh27"
           },
           {
             "title": "水深火热",
             "source": [
-              "the.bi/s/rawtn8jpsc6uvv"
+              "river.to/occasus/rawtn8jpsc6uvv"
             ],
-            "target": "/category/rawtn8jpsc6uvv"
+            "target": "/the/category/rawtn8jpsc6uvv"
           },
           {
             "title": "东升西降",
             "source": [
-              "the.bi/s/rawai5kd4z15il"
+              "river.to/occasus/rawai5kd4z15il"
             ],
-            "target": "/category/rawai5kd4z15il"
+            "target": "/the/category/rawai5kd4z15il"
           },
           {
-            "title": "大局 & 大棋",
+            "title": "大局",
             "source": [
-              "the.bi/s/raw2efkzejrsx8"
+              "river.to/occasus/raw2efkzejrsx8"
             ],
-            "target": "/category/raw2efkzejrsx8"
+            "target": "/the/category/raw2efkzejrsx8"
           },
           {
             "title": "境外势力",
             "source": [
-              "the.bi/s/rawmpalhnlphuc"
+              "river.to/occasus/rawmpalhnlphuc"
             ],
-            "target": "/category/rawmpalhnlphuc"
+            "target": "/the/category/rawmpalhnlphuc"
           },
           {
             "title": "副刊",
             "source": [
-              "the.bi/s/rawxght2jr2u5z"
+              "river.to/occasus/rawxght2jr2u5z"
             ],
-            "target": "/category/rawxght2jr2u5z"
+            "target": "/the/category/rawxght2jr2u5z"
           },
           {
             "title": "天高地厚",
             "source": [
-              "the.bi/s/rawrsnh9zakqdx"
+              "river.to/occasus/rawrsnh9zakqdx"
             ],
-            "target": "/category/rawrsnh9zakqdx"
+            "target": "/the/category/rawrsnh9zakqdx"
           },
           {
             "title": "Oyster",
             "source": [
-              "the.bi/s/rawdhl9hugdfn9"
+              "river.to/occasus/rawdhl9hugdfn9"
             ],
-            "target": "/category/rawdhl9hugdfn9"
+            "target": "/the/category/rawdhl9hugdfn9"
           }
         ],
         "location": "index.ts",
@@ -120559,13 +120552,13 @@ export default {
       }
     },
     "apiRoutes": {},
-    "name": "The.bi",
-    "url": "the.bi",
+    "name": "River.to (江河日下)",
+    "url": "river.to",
     "categories": [
       "new-media"
     ],
     "description": "",
-    "lang": "en"
+    "lang": "zh-CN"
   },
   "theatlantic": {
     "routes": {
@@ -120920,7 +120913,8 @@ export default {
         "path": "/follow/articles/:language?",
         "name": "个人订阅追踪动态（已停用）",
         "maintainers": [
-          "AgFlore"
+          "AgFlore",
+          "pseudoyu"
         ],
         "parameters": {
           "language": "语言"
@@ -120959,7 +120953,8 @@ export default {
         },
         "name": "App",
         "maintainers": [
-          "quiniapiezoelectricity"
+          "quiniapiezoelectricity",
+          "pseudoyu"
         ],
         "radar": [
           {
@@ -120978,7 +120973,8 @@ export default {
         "name": "作者",
         "url": "theinitium.com",
         "maintainers": [
-          "AgFlore"
+          "AgFlore",
+          "pseudoyu"
         ],
         "parameters": {
           "type": "作者 slug，可从作者主页 URL 中获取，如 `https://theinitium.com/author/initium-newsroom/`",
@@ -121019,7 +121015,8 @@ export default {
         "url": "theinitium.com",
         "maintainers": [
           "prnake",
-          "mintyfrankie"
+          "mintyfrankie",
+          "pseudoyu"
         ],
         "parameters": {
           "type": "栏目，缺省为最新（latest）",
@@ -121066,7 +121063,8 @@ export default {
         "name": "话题・标签",
         "url": "theinitium.com",
         "maintainers": [
-          "AgFlore"
+          "AgFlore",
+          "pseudoyu"
         ],
         "parameters": {
           "type": "标签 slug，可从标签页 URL 中获取，如 `https://theinitium.com/tag/south-korea/` 则为 `south-korea`",
@@ -125348,7 +125346,8 @@ export default {
         ],
         "name": "即時新聞",
         "maintainers": [
-          "miles170"
+          "miles170",
+          "pseudoyu"
         ],
         "description": "| 0    | 1    | 2    | 3    | 4    | 5    | 6    | 7    | 8    | 9    | 11   | 12   | 13   | 99     |\n| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ------ |\n| 精選 | 要聞 | 社會 | 地方 | 兩岸 | 國際 | 財經 | 運動 | 娛樂 | 生活 | 股市 | 文教 | 數位 | 不分類 |",
         "location": "breaking-news.tsx",
@@ -125381,7 +125380,8 @@ export default {
         ],
         "name": "轉角國際 - 首頁",
         "maintainers": [
-          "nczitzk"
+          "nczitzk",
+          "pseudoyu"
         ],
         "description": "| 首頁 | 編輯精選 | 熱門文章 |\n| ---- | -------- | -------- |\n|      | editor   | hot      |",
         "location": "global/index.ts",
@@ -125415,7 +125415,8 @@ export default {
         "name": "轉角國際 - 標籤",
         "maintainers": [
           "emdoe",
-          "nczitzk"
+          "nczitzk",
+          "pseudoyu"
         ],
         "description": "| 過去 24 小時 | 鏡頭背後 | 深度專欄 | 重磅廣播 |\n| ------------ | -------- | -------- | -------- |",
         "location": "global/tag.ts",
