@@ -24,11 +24,9 @@ export const route: Route = {
     name: 'News',
     maintainers: ['quiniapiezoelectricity'],
     handler,
-    description: `
-::: tip
-For example, the category for the page https://www.koreaherald.com/Business and https://www.koreaherald.com/Business/Market would be \`/Business\` and \`/Business/Market\` respectively. 
-:::
-`,
+    description: `::: tip
+For example, the category for the page <https://www.koreaherald.com/Business> and <https://www.koreaherald.com/Business/Market> would be \`/Business\` and \`/Business/Market\` respectively.
+:::`,
     radar: [
         {
             source: ['www.koreaherald.com/:category'],
@@ -56,7 +54,7 @@ async function handler(ctx) {
                 return {
                     title: metadata.headline,
                     link: url,
-                    pubDate: timezone(parseDate(metadata.datePublished), +9),
+                    pubDate: timezone(parseDate(metadata.datePublished), 9),
                     author: metadata.author.name,
                     description: $('article.article-body').html(),
                 };

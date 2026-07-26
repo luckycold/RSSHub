@@ -36,7 +36,7 @@ export async function handler(ctx) {
     const response = await ofetch(link);
 
     if (response.statusCode !== 200) {
-        throw new InvalidParameterError(`无效序列号, 请检查你的序列号是否正确.`);
+        throw new InvalidParameterError('无效序列号, 请检查你的序列号是否正确.');
     }
 
     const driveList = response.data.partList.flatMap((part) => part.drivelist);
@@ -47,7 +47,7 @@ export async function handler(ctx) {
                 title: `${item.DriverName} ${item.Version}`,
                 link: `https://newsupport.lenovo.com.cn/driveDownloads_detail.html?driveId=${item.DriverEdtionId}`,
                 description: renderToString(<DriveDescription driveName={item.DriverName} driveCode={item.DriverCode} driveVersion={item.Version} downloadFileName={item.FileName} downloadFilePath={item.FilePath} />),
-                pubDate: parseDate(item.CreateTime, +8),
+                pubDate: parseDate(item.CreateTime, 8),
             }) as DataItem
     );
 

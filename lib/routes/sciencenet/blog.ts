@@ -29,13 +29,13 @@ export const route: Route = {
 | --------- | ---- | ---- |
 | recommend | new  | hot  |
 
-  时间
+时间
 
 | 36 小时内精选博文 | 一周内精选博文 | 一月内精选博文 | 半年内精选博文 | 所有时间精选博文 |
 | ----------------- | -------------- | -------------- | -------------- | ---------------- |
 | 1                 | 2              | 3              | 4              | 5                |
 
-  排序
+排序
 
 | 按发表时间排序 | 按评论数排序 | 按点击数排序 |
 | -------------- | ------------ | ------------ |
@@ -84,7 +84,7 @@ async function handler(ctx) {
 
                 item.author = content('.xs2').text();
                 item.description = content('#blog_article').html();
-                item.pubDate = timezone(parseDate(content('.xg1').eq(5).text()), +8);
+                item.pubDate = timezone(parseDate(content('.xg1').eq(5).text()), 8);
 
                 return item;
             })

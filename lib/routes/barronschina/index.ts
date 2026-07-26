@@ -30,7 +30,7 @@ export const route: Route = {
     handler,
     url: 'barronschina.com.cn/',
     description: `::: tip
-  栏目 id 留空则返回快讯，在对应页地址栏 \`columnId=\` 后可以看到。
+栏目 id 留空则返回快讯，在对应页地址栏 \`columnId=\` 后可以看到。
 :::`,
 };
 
@@ -68,7 +68,7 @@ async function handler(ctx) {
                           const content = load(detailResponse.data);
 
                           item.description = content('.cont_main').html();
-                          item.pubDate = timezone(parseDate(content('.timeTag').text()), +8);
+                          item.pubDate = timezone(parseDate(content('.timeTag').text()), 8);
 
                           return item;
                       })
@@ -89,12 +89,12 @@ async function handler(ctx) {
                       title,
                       description,
                       link: currentUrl,
-                      pubDate: timezone(parseDate(`${item.parent().find('dt').text()} ${item.text()}`), +8),
+                      pubDate: timezone(parseDate(`${item.parent().find('dt').text()} ${item.text()}`), 8),
                   };
               });
 
     return {
-        title: $('title').text().split('，')[0],
+        title: $('title').text().split('，', 1)[0],
         link: currentUrl,
         item: items,
     };

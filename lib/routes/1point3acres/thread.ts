@@ -1,5 +1,4 @@
 import type { Route } from '@/types';
-import cache from '@/utils/cache';
 
 import { apiRootUrl, ProcessThreads, rootUrl, types } from './utils';
 
@@ -18,7 +17,7 @@ export const route: Route = {
 | -------- | -------- |
 | hot      | new      |
 
-  排序方式
+排序方式
 
 | 最新回复 | 最新发布 |
 | -------- | -------- |
@@ -35,6 +34,6 @@ async function handler(ctx) {
     return {
         title: `一亩三分地 - ${types[type]}`,
         link: rootUrl,
-        item: await ProcessThreads(cache.tryGet, apiUrl, order),
+        item: await ProcessThreads(apiUrl, order),
     };
 }

@@ -22,8 +22,8 @@ export const route: Route = {
     handler,
     url: 'xinwen.byau.edu.cn',
     description: `| 学校要闻 | 校园动态 |
-| ---- | ----------- |
-| 3674 | 3676 |`,
+| -------- | -------- |
+| 3674     | 3676     |`,
 };
 
 async function handler(ctx) {
@@ -48,7 +48,7 @@ async function handler(ctx) {
             return {
                 title: $$('a').text(),
                 link: itemUrl,
-                pubDate: timezone(parseDate($$('.news_meta').text()), +8),
+                pubDate: timezone(parseDate($$('.news_meta').text()), 8),
             };
         });
 

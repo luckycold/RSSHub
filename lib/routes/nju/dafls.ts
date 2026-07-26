@@ -36,7 +36,7 @@ async function handler() {
 
     const items = await Promise.all(
         Object.keys(category_dict).map(async (c) => {
-            const response = await got(`https://dafls.nju.edu.cn/13167/list.htm`);
+            const response = await got('https://dafls.nju.edu.cn/13167/list.htm');
 
             const data = response.data;
             const $ = load(data);
@@ -48,7 +48,7 @@ async function handler() {
                 return {
                     title: item.find('a').last().text(),
                     link: 'https://dafls.nju.edu.cn' + item.find('a').attr('href'),
-                    pubDate: timezone(parseDate(item.find('span').last().text(), 'YYYY-MM-DD'), +8),
+                    pubDate: timezone(parseDate(item.find('span').last().text(), 'YYYY-MM-DD'), 8),
                     category: c,
                 };
             });

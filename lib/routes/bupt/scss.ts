@@ -73,8 +73,8 @@ async function handler() {
                 const content = load(detailResponse.data);
                 const newsContent = content('.v_news_content');
 
-                newsContent.find('p, span, strong').each(function () {
-                    const element = content(this);
+                newsContent.find('p, span, strong').each((_, el) => {
+                    const element = content(el);
                     const text = element.text().trim();
                     if (text === '') {
                         element.remove();
@@ -84,7 +84,7 @@ async function handler() {
                 });
 
                 item.description = newsContent.text();
-                item.pubDate = timezone(parseDate(item.pubDateRaw), +8);
+                item.pubDate = timezone(parseDate(item.pubDateRaw), 8);
 
                 return item;
             })

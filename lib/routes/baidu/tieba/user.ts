@@ -21,7 +21,7 @@ export const route: Route = {
     name: '用户帖子',
     maintainers: ['igxlin', 'nczitzk'],
     handler,
-    description: `用户 ID 可以通过打开用户的主页后查看地址栏的 \`un\` 字段来获取。`,
+    description: '用户 ID 可以通过打开用户的主页后查看地址栏的 `un` 字段来获取。',
 };
 
 async function handler(ctx) {
@@ -45,7 +45,7 @@ async function handler(ctx) {
                 imgurl = item.find('ul.n_media.clearfix img').attr('original');
                 return {
                     title: item.find('div.thread_name a').attr('title'),
-                    pubDate: timezone(parseDate(item.parent().find('div .n_post_time').text(), ['YYYY-MM-DD', 'HH:mm']), +8),
+                    pubDate: timezone(parseDate(item.parent().find('div .n_post_time').text(), ['YYYY-MM-DD', 'HH:mm']), 8),
                     description: `${item.find('div.n_txt').text()}<br><img src="${imgurl}">`,
                     link: item.find('div.thread_name a').attr('href'),
                 };

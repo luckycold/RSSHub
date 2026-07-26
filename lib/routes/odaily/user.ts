@@ -47,7 +47,7 @@ async function handler(ctx) {
         title: item.title,
         summary: item.summary,
         link: `${rootUrl}/post/${item.entity_id}`,
-        pubDate: timezone(parseDate(item.published_at), +8),
+        pubDate: timezone(parseDate(item.published_at), 8),
     }));
 
     items = await Promise.all(
@@ -60,10 +60,10 @@ async function handler(ctx) {
 
                 const content = load(detailResponse.data.match(/"content":"(.*)","extraction_tags":/)[1]);
 
-                content('img').each(function () {
-                    content(this).attr(
+                content('img').each((_, el) => {
+                    content(el).attr(
                         'src',
-                        content(this)
+                        content(el)
                             .attr('src')
                             .replaceAll(String.raw`\"`, '')
                     );

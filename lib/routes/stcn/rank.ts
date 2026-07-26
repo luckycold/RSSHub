@@ -11,11 +11,11 @@ import timezone from '@/utils/timezone';
 
 export const handler = async (ctx: Context): Promise<Data> => {
     const { id = 'yw' } = ctx.req.param();
-    const limit: number = Number.parseInt(ctx.req.query('limit') ?? '30', 10);
+    const limit = Number(ctx.req.query('limit') ?? '30');
 
     const baseUrl = 'https://www.stcn.com';
     const targetUrl: string = new URL(`article/list/${id}.html`, baseUrl).href;
-    const apiUrl: string = new URL(`article/category-news-rank.html`, baseUrl).href;
+    const apiUrl: string = new URL('article/category-news-rank.html', baseUrl).href;
 
     const response = await ofetch(apiUrl, {
         headers: {
@@ -64,14 +64,14 @@ export const handler = async (ctx: Context): Promise<Data> => {
                     const processedItem: DataItem = {
                         title,
                         description,
-                        pubDate: pubDateStr ? timezone(parseDate(pubDateStr), +8) : item.pubDate,
+                        pubDate: pubDateStr ? timezone(parseDate(pubDateStr), 8) : item.pubDate,
                         category: categories,
                         author: authors,
                         content: {
                             html: description,
                             text: description,
                         },
-                        updated: upDatedStr ? timezone(parseDate(upDatedStr), +8) : item.updated,
+                        updated: upDatedStr ? timezone(parseDate(upDatedStr), 8) : item.updated,
                         language,
                     };
 
@@ -91,7 +91,7 @@ export const handler = async (ctx: Context): Promise<Data> => {
         item: items,
         allowEmpty: true,
         image: $('img.stcn-logo').attr('src'),
-        author: $('meta[name="keywords"]').attr('content')?.split(/,/)[0],
+        author: $('meta[name="keywords"]').attr('content')?.split(/,/, 1)[0],
         language,
         id: targetUrl,
     };
@@ -165,8 +165,7 @@ export const route: Route = {
 
 | 产经 | 科创板 | 新三板 | ESG | 滚动 |
 | ---- | ------ | ------ | --- | ---- |
-| cj   | kcb    | xsb    | zk  | gd   |
-`,
+| cj   | kcb    | xsb    | zk  | gd   |`,
     categories: ['finance'],
     features: {
         requireConfig: false,

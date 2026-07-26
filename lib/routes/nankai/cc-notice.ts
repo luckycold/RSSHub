@@ -28,8 +28,8 @@ export const route: Route = {
     name: '计算机学院',
     maintainers: ['vicguo0724'],
     description: `| 最新动态 | 学院公告 | 学生工作通知 | 科研信息 | 本科生教学 | 党团园地 | 研究生招生 | 研究生教学 | 境外交流 |
-| -------- | -------- | ---------- | -------- | ---------- | -------- | ---------- | ---------- | -------- |
-| 13291    | 13292    | 13293      | 13294    | 13295      | 13296    | 13297      | 13298      | 13299    |`,
+| -------- | -------- | ------------ | -------- | ---------- | -------- | ---------- | ---------- | -------- |
+| 13291    | 13292    | 13293        | 13294    | 13295      | 13296    | 13297      | 13298      | 13299    |`,
     url: 'cc.nankai.edu.cn',
     handler: async (ctx) => {
         // 从 URL 参数中获取通知分类
@@ -73,7 +73,7 @@ export const route: Route = {
                 return {
                     title,
                     link,
-                    pubDate: timezone(parseDate(dateStr), +8),
+                    pubDate: timezone(parseDate(dateStr), 8),
                     author: publisher,
                 };
             })
@@ -91,7 +91,7 @@ export const route: Route = {
                               // 优化内容选择器逻辑，避免重复选择
                               let description = $('.wp_articlecontent').html() || $('.body-news-detail').html();
 
-                              description = description || item.title;
+                              description ||= item.title;
                               item.description = description;
                           } catch {
                               // 如果获取详细内容失败，返回基本信息

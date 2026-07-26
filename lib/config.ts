@@ -8,12 +8,14 @@ type ConfigEnvKeys =
     | 'ENABLE_CLUSTER'
     | 'IS_PACKAGE'
     | 'NODE_NAME'
-    | 'PUPPETEER_REAL_BROWSER_SERVICE'
+    | 'PLAYWRIGHT_WS_ENDPOINT'
     | 'PUPPETEER_WS_ENDPOINT'
+    | 'PLAYWRIGHT_CDP_ENDPOINT'
     | 'CHROMIUM_EXECUTABLE_PATH'
     // Network
     | 'PORT'
     | 'LISTEN_INADDR_ANY'
+    | 'DISABLE_IPV6'
     | 'REQUEST_RETRY'
     | 'REQUEST_TIMEOUT'
     | 'UA'
@@ -26,6 +28,8 @@ type ConfigEnvKeys =
     | 'CACHE_CONTENT_EXPIRE'
     | 'MEMORY_MAX'
     | 'REDIS_URL'
+    | 'CACHE_HTTP_URL'
+    | 'CACHE_HTTP_TOKEN'
     // Proxy
     | 'PROXY_URI'
     | 'PROXY_URIS'
@@ -48,6 +52,8 @@ type ConfigEnvKeys =
     | 'OTEL_SECONDS_BUCKET'
     | 'OTEL_MILLISECONDS_BUCKET'
     | 'SHOW_LOGGER_TIMESTAMP'
+    | 'HONEYBADGER_API_KEY'
+    | 'ERROR_TRACKING_ROUTE_TIMEOUT'
     | 'SENTRY'
     | 'SENTRY_ROUTE_TIMEOUT'
     | 'ENABLE_REMOTE_DEBUGGING'
@@ -61,6 +67,7 @@ type ConfigEnvKeys =
     | 'DISABLE_NSFW'
     | 'SUFFIX'
     | 'TITLE_LENGTH_LIMIT'
+    | 'FORMAT'
     // OpenAI
     | 'OPENAI_API_KEY'
     | 'OPENAI_MODEL'
@@ -131,7 +138,7 @@ type ConfigEnvKeys =
     | 'JUMEILI_COOKIE'
     | 'KEYLOL_COOKIE'
     | 'LASTFM_API_KEY'
-    | 'SECURITY_KEY'
+    | 'LOCALS_SESSION'
     | 'LOFTER_COOKIE'
     | 'LORIENTLEJOUR_TOKEN'
     | 'LORIENTLEJOUR_USERNAME'
@@ -182,6 +189,7 @@ type ConfigEnvKeys =
     | 'SCIHUB_HOST'
     | 'SDO_FF14RISINGSTONES'
     | 'SDO_UA'
+    | 'SECURITY_KEY'
     | 'SIS001_BASE_URL'
     | 'SKEB_BEARER_TOKEN'
     | 'SORRYCC_COOKIES'
@@ -235,6 +243,7 @@ type ConfigEnvKeys =
     | 'YOUTUBE_CLIENT_SECRET'
     | 'YOUTUBE_REFRESH_TOKEN'
     | 'YOUTUBE_VIDEO_EMBED_URL'
+    | 'ZAIMANHUA_TOKEN'
     | 'ZHIHU_COOKIES'
     | 'ZODGAME_COOKIE'
     | 'ZSXQ_ACCESS_TOKEN'
@@ -252,17 +261,19 @@ export type Config = {
     enableCluster?: string;
     isPackage: boolean;
     nodeName?: string;
-    puppeteerRealBrowserService?: string;
-    puppeteerWSEndpoint?: string;
+    playwrightWSEndpoint?: string;
+    playwrightCDPEndpoint?: string;
     chromiumExecutablePath?: string;
     // network
     connect: {
         port: number;
     };
     listenInaddrAny: boolean;
+    disableIPv6: boolean;
     requestRetry: number;
     requestTimeout: number;
     ua: string;
+    isDefaultUA: boolean;
     trueUA: string;
     allowOrigin?: string;
     // cache
@@ -277,6 +288,10 @@ export type Config = {
     };
     redis: {
         url: string;
+    };
+    httpCache: {
+        url?: string;
+        token?: string;
     };
     // proxy
     proxyUri?: string;
@@ -304,10 +319,13 @@ export type Config = {
         milliseconds_bucket?: string;
     };
     showLoggerTimestamp?: boolean;
+    honeybadger: {
+        apiKey?: string;
+    };
     sentry: {
         dsn?: string;
-        routeTimeout: number;
     };
+    errorTrackingRouteTimeout: number;
     enableRemoteDebugging?: boolean;
     // feed config
     hotlink: {
@@ -323,6 +341,7 @@ export type Config = {
     };
     suffix?: string;
     titleLengthLimit: number;
+    format: string;
     openai: {
         apiKey?: string;
         model?: string;
@@ -468,6 +487,9 @@ export type Config = {
     };
     lightnovel: {
         cookie?: string;
+    };
+    locals: {
+        session?: string;
     };
     lofter: {
         cookies?: string;
@@ -674,6 +696,9 @@ export type Config = {
         refreshToken?: string;
         videoEmbedUrl?: string;
     };
+    zaimanhua: {
+        token?: string;
+    };
     zhihu: {
         cookies?: string;
     };
@@ -695,9 +720,8 @@ const TRUE_UA = 'RSSHub/1.0 (+http://github.com/DIYgod/RSSHub; like FeedFetcher-
 const toBoolean = (value: string | undefined, defaultValue: boolean) => {
     if (value === undefined) {
         return defaultValue;
-    } else {
-        return value === '' || value === '0' || value === 'false' ? false : !!value;
     }
+    return ['', '0', 'false'].includes(value) ? false : !!value;
 };
 
 const toInt = (value: string | undefined, defaultValue?: number) => (value === undefined ? defaultValue : Number.parseInt(value));
@@ -734,22 +758,24 @@ const calculateValue = () => {
         enableCluster: toBoolean(envs.ENABLE_CLUSTER, false),
         isPackage: !!envs.IS_PACKAGE,
         nodeName: envs.NODE_NAME,
-        puppeteerRealBrowserService: envs.PUPPETEER_REAL_BROWSER_SERVICE,
-        puppeteerWSEndpoint: envs.PUPPETEER_WS_ENDPOINT,
+        playwrightWSEndpoint: envs.PLAYWRIGHT_WS_ENDPOINT ?? envs.PUPPETEER_WS_ENDPOINT,
+        playwrightCDPEndpoint: envs.PLAYWRIGHT_CDP_ENDPOINT,
         chromiumExecutablePath: envs.CHROMIUM_EXECUTABLE_PATH,
         // network
         connect: {
             port: toInt(envs.PORT, 1200), // 监听端口
         },
         listenInaddrAny: toBoolean(envs.LISTEN_INADDR_ANY, true), // 是否允许公网连接，取值 0 1
+        disableIPv6: toBoolean(envs.DISABLE_IPV6, false),
         requestRetry: toInt(envs.REQUEST_RETRY, 2), // 请求失败重试次数
         requestTimeout: toInt(envs.REQUEST_TIMEOUT, 30000), // Milliseconds to wait for the server to end the response before aborting the request
-        ua: envs.UA ?? (toBoolean(envs.NO_RANDOM_UA, false) ? TRUE_UA : 'Mozilla/5.0 (Macintosh; Intel Mac OS X 15_6_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'),
+        ua: envs.UA || (toBoolean(envs.NO_RANDOM_UA, false) ? TRUE_UA : 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'),
+        isDefaultUA: !envs.UA && !toBoolean(envs.NO_RANDOM_UA, false),
         trueUA: TRUE_UA,
         allowOrigin: envs.ALLOW_ORIGIN,
         // cache
         cache: {
-            type: envs.CACHE_TYPE || (envs.CACHE_TYPE === '' ? '' : 'memory'), // 缓存类型，支持 'memory' 和 'redis'，设为空可以禁止缓存
+            type: envs.CACHE_TYPE || (envs.CACHE_TYPE === '' ? '' : 'memory'), // Cache type; supports 'memory', 'redis', and 'http'. Set to empty string to disable cache.
             requestTimeout: toInt(envs.CACHE_REQUEST_TIMEOUT, 60),
             routeExpire: toInt(envs.CACHE_EXPIRE, 5 * 60), // 路由缓存时间，单位为秒
             contentExpire: toInt(envs.CACHE_CONTENT_EXPIRE, 1 * 60 * 60), // 不变内容缓存时间，单位为秒
@@ -760,6 +786,10 @@ const calculateValue = () => {
         },
         redis: {
             url: envs.REDIS_URL || 'redis://localhost:6379/',
+        },
+        httpCache: {
+            url: envs.CACHE_HTTP_URL,
+            token: envs.CACHE_HTTP_TOKEN,
         },
         // proxy
         proxyUri: envs.PROXY_URI,
@@ -792,10 +822,13 @@ const calculateValue = () => {
             milliseconds_bucket: envs.OTEL_MILLISECONDS_BUCKET || '10,20,50,100,250,500,1000,5000,15000',
         },
         showLoggerTimestamp: toBoolean(envs.SHOW_LOGGER_TIMESTAMP, false),
+        honeybadger: {
+            apiKey: envs.HONEYBADGER_API_KEY,
+        },
         sentry: {
             dsn: envs.SENTRY,
-            routeTimeout: toInt(envs.SENTRY_ROUTE_TIMEOUT, 30000),
         },
+        errorTrackingRouteTimeout: toInt(envs.ERROR_TRACKING_ROUTE_TIMEOUT || envs.SENTRY_ROUTE_TIMEOUT, 30000),
         enableRemoteDebugging: toBoolean(envs.ENABLE_REMOTE_DEBUGGING, false),
         // feed config
         hotlink: {
@@ -811,6 +844,7 @@ const calculateValue = () => {
         },
         suffix: envs.SUFFIX,
         titleLengthLimit: toInt(envs.TITLE_LENGTH_LIMIT, 150),
+        format: envs.FORMAT || 'rss',
         openai: {
             apiKey: envs.OPENAI_API_KEY,
             model: envs.OPENAI_MODEL || 'gpt-3.5-turbo-16k',
@@ -956,6 +990,9 @@ const calculateValue = () => {
         },
         lightnovel: {
             cookie: envs.SECURITY_KEY,
+        },
+        locals: {
+            session: envs.LOCALS_SESSION,
         },
         lofter: {
             cookies: envs.LOFTER_COOKIE,
@@ -1162,6 +1199,9 @@ const calculateValue = () => {
             refreshToken: envs.YOUTUBE_REFRESH_TOKEN,
             videoEmbedUrl: envs.YOUTUBE_VIDEO_EMBED_URL || 'https://www.youtube-nocookie.com/embed/',
         },
+        zaimanhua: {
+            token: envs.ZAIMANHUA_TOKEN,
+        },
         zhihu: {
             cookies: envs.ZHIHU_COOKIES,
         },
@@ -1181,26 +1221,26 @@ const calculateValue = () => {
     }
 };
 calculateValue();
-
 (async () => {
-    if (envs.REMOTE_CONFIG) {
-        const { default: logger } = await import('@/utils/logger');
-        try {
-            const data = await ofetch(envs.REMOTE_CONFIG, {
-                headers: {
-                    Authorization: `Basic ${envs.REMOTE_CONFIG_AUTH}`,
-                },
-            });
-            if (data) {
-                envs = Object.assign(envs, data);
-                calculateValue();
-                logger.info('Remote config loaded.');
-            } else {
-                logger.error('Remote config load failed.');
-            }
-        } catch (error) {
-            logger.error('Remote config load failed.', error);
+    if (!envs.REMOTE_CONFIG) {
+        return;
+    }
+    const { default: logger } = await import('@/utils/logger');
+    try {
+        const data = await ofetch(envs.REMOTE_CONFIG, {
+            headers: {
+                Authorization: `Basic ${envs.REMOTE_CONFIG_AUTH}`,
+            },
+        });
+        if (data) {
+            envs = Object.assign(envs, data);
+            calculateValue();
+            logger.info('Remote config loaded.');
+        } else {
+            logger.error('Remote config load failed.');
         }
+    } catch (error) {
+        logger.error('Remote config load failed.', error);
     }
 })();
 

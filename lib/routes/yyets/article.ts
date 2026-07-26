@@ -42,7 +42,7 @@ export const route: Route = {
     handler,
     description: `| 全部 | 影视资讯 | 收视快报 | 人人影评  | 人人剧评  | 新剧评测    | 片单推荐 |
 | ---- | -------- | -------- | --------- | --------- | ----------- | -------- |
-|      | news     | report   | m_review | t_review | new_review | recom    |`,
+|      | news     | report   | m\\_review | t\\_review | new\\_review | recom    |`,
 };
 
 async function handler(ctx) {
@@ -60,7 +60,7 @@ async function handler(ctx) {
                 title: e.find('h3 a').text(),
                 link: `${baseURL}${e.find('h3 a').attr('href')}`,
                 author: e.find('p a').text(),
-                pubDate: timezone(parseDate(e.find('p').eq(2).text()), +8),
+                pubDate: timezone(parseDate(e.find('p').eq(2).text()), 8),
             };
         });
 

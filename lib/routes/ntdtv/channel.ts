@@ -31,7 +31,7 @@ export const route: Route = {
     handler,
     description: `参数均可在官网获取，如：
 
-  \`https://www.ntdtv.com/b5/prog1201\` 对应 \`/ntdtv/b5/prog1201\``,
+\`https://www.ntdtv.com/b5/prog1201\` 对应 \`/ntdtv/b5/prog1201\``,
 };
 
 async function handler(ctx) {
@@ -58,7 +58,7 @@ async function handler(ctx) {
                 const content = load(detailResponse.data);
 
                 item.description = content('div.post_content').html();
-                item.pubDate = timezone(parseDate(content('div.time > span').text()), +8);
+                item.pubDate = timezone(parseDate(content('div.time > span').text()), 8);
 
                 return item;
             })

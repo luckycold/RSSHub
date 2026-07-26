@@ -30,7 +30,7 @@ export const route: Route = {
     maintainers: ['LogicJake', 'nczitzk'],
     handler,
     description: `::: tip
-  更多社区参见 [社区](https://bbs.hupu.com)
+更多社区参见 [社区](https://bbs.hupu.com)
 :::`,
 };
 
@@ -40,7 +40,7 @@ async function handler(ctx) {
 
     const rootUrl = 'https://bbs.hupu.com';
     const apiRootUrl = 'https://games.mobileapi.hupu.com';
-    const currentUrl = `${rootUrl}/${id}${order === '1' ? `-postdate` : ''}`;
+    const currentUrl = `${rootUrl}/${id}${order === '1' ? '-postdate' : ''}`;
 
     const response = await got({
         method: 'get',
@@ -59,7 +59,7 @@ async function handler(ctx) {
             return {
                 title: item.text(),
                 link: `${rootUrl}${item.attr('href')}`,
-                pubDate: timezone(parseDate(item.parent().parent().find('.post-time').text(), 'MM-DD HH:mm'), +8),
+                pubDate: timezone(parseDate(item.parent().parent().find('.post-time').text(), 'MM-DD HH:mm'), 8),
             };
         });
 

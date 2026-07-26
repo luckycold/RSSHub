@@ -34,7 +34,7 @@ async function handler(ctx) {
     const params = { kw: encodeURIComponent(kw) };
     ctx.req.path.includes('good') && (params.tab = 'good');
     cid && (params.cid = cid);
-    const { data } = await got(`https://tieba.baidu.com/f`, {
+    const { data } = await got('https://tieba.baidu.com/f', {
         headers: {
             Referer: 'https://tieba.baidu.com/',
         },
@@ -72,7 +72,7 @@ async function handler(ctx) {
                         <p>作者：{author_name}</p>
                     </>
                 ),
-                pubDate: timezone(parseDate(time, ['HH:mm', 'M-D', 'YYYY-MM'], true), +8),
+                pubDate: timezone(parseDate(time, ['HH:mm', 'M-D', 'YYYY-MM'], true), 8),
                 link: `https://tieba.baidu.com/p/${id}`,
             };
         });

@@ -44,7 +44,7 @@ async function handler(ctx) {
             return {
                 title: item.attr('data-title'),
                 link: link.startsWith('http') ? link : `${rootUrl}${link}`,
-                pubDate: timezone(parseDate(item.text()), +8),
+                pubDate: timezone(parseDate(item.text()), 8),
             };
         });
 
@@ -60,19 +60,19 @@ async function handler(ctx) {
 
                 content('.ads-frame, .read-more-msg').remove();
 
-                content('figure').each(function () {
-                    content(this).replaceWith(
+                content('figure').each((_, el) => {
+                    content(el).replaceWith(
                         renderToString(
                             <figure>
-                                <img src={content(this).find('img').attr('src')} />
-                                <figcaption>{content(this).find('figcaption').text()}</figcaption>
+                                <img src={content(el).find('img').attr('src')} />
+                                <figcaption>{content(el).find('figcaption').text()}</figcaption>
                             </figure>
                         )
                     );
                 });
 
                 item.description = content('.article-page-content').html();
-                item.pubDate = timezone(parseDate(content('meta[property="article:published_time"]').attr('content')), +8);
+                item.pubDate = timezone(parseDate(content('meta[property="article:published_time"]').attr('content')), 8);
 
                 return item;
             })

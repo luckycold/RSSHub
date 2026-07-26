@@ -46,7 +46,7 @@ async function handler() {
             return {
                 title: keyword[1],
                 author: keyword[2],
-                pubDate: timezone(parseDate(keyword[3], 'YYYY-MM-DD'), +8),
+                pubDate: timezone(parseDate(keyword[3], 'YYYY-MM-DD'), 8),
                 link,
             };
         });
@@ -64,7 +64,7 @@ async function handler() {
         )
     );
     return {
-        title: `中国经济50人论坛专家文章`,
+        title: '中国经济50人论坛专家文章',
         link: 'https://www.50forum.org.cn/portal/list/index.html?id=6',
         description: '中国经济50人论坛专家文章',
         item: out,

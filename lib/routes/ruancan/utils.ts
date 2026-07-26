@@ -4,7 +4,7 @@ import cache from '@/utils/cache';
 import got from '@/utils/got';
 import { parseDate } from '@/utils/parse-date';
 
-const fetchFeed = async (ctx, currentUrl) => {
+export const fetchFeed = async (ctx, currentUrl) => {
     const rootUrl = 'https://www.ruancan.com';
     currentUrl = `${rootUrl}${currentUrl}`;
 
@@ -39,14 +39,14 @@ const fetchFeed = async (ctx, currentUrl) => {
 
                 content('.entry-copyright').remove();
 
-                content('.entry-content div').each(function () {
-                    if (/^ruanc-\d+/.test(content(this).attr('id'))) {
-                        content(this).remove();
+                content('.entry-content div').each((_, el) => {
+                    if (/^ruanc-\d+/.test(content(el).attr('id'))) {
+                        content(el).remove();
                     }
                 });
 
-                content('figure').each(function () {
-                    content(this).html(`<img src="${content(this).find('a').attr('href')}">`);
+                content('figure').each((_, el) => {
+                    content(el).html(`<img src="${content(el).find('a').attr('href')}">`);
                 });
 
                 item.description = content('.entry-content').html();
@@ -66,4 +66,3 @@ const fetchFeed = async (ctx, currentUrl) => {
         item: items,
     };
 };
-export default fetchFeed;

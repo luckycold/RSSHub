@@ -22,15 +22,15 @@ export const route: Route = {
     name: "Thailand Parliament Draft of Law's public hearing system",
     maintainers: ['itpcc'],
     handler,
-    description: `| Presented by MP *       | Presented by People * | Hearing Ongoing     | Hearing ended   | Hearing result reported  | Waiting for PM approval | Assigned into the session | Processed  | PM Rejected   |
-| ------------------------ | ---------------------- | ------------------- | --------------- | ------------------------ | ----------------------- | ------------------------- | ---------- | ------------- |
-| presentbymp              | presentbyperson        | openwsu             | closewsu        | reportwsu                | substatus1              | substatus2                | substatus3 | closewsubypm  |
-| เสนอโดยสมาชิกสภาผู้แทนราษฏร | เสนอโดยประชาชน         | กำลังเปิดรับฟังความคิดเห็น | ปิดรับฟังความคิดเห็น | รายงานผลการรับฟังความคิดเห็น | รอคำรับรองจากนายกรัฐมนตรี   | บรรจุเข้าระเบียบวาระ         | พิจารณาแล้ว  | นายกฯ ไม่รับรอง |
+    description: `| Presented by MP \\*       | Presented by People \\* | Hearing Ongoing      | Hearing ended   | Hearing result reported  | Waiting for PM approval | Assigned into the session | Processed  | PM Rejected   |
+| ------------------------ | ---------------------- | -------------------- | --------------- | ------------------------ | ----------------------- | ------------------------- | ---------- | ------------- |
+| presentbymp              | presentbyperson        | openwsu              | closewsu        | reportwsu                | substatus1              | substatus2                | substatus3 | closewsubypm  |
+| เสนอโดยสมาชิกสภาผู้แทนราษฏร | เสนอโดยประชาชน         | กำลังเปิดรับฟังความคิดเห็น | ปิดรับฟังความคิดเห็น | รายงานผลการรับฟังความคิดเห็น | รอคำรับรองจากนายกรัฐมนตรี  | บรรจุเข้าระเบียบวาระ         | พิจารณาแล้ว  | นายกฯ ไม่รับรอง |
 
-  *Note:* For \`presentbymp\` and \`presentbyperson\`, it can also add:
+*Note:* For \`presentbymp\` and \`presentbyperson\`, it can also add:
 
-  -   \`-m\` for the draft which Speaker of Parliament considered as a monetary draft (ประธานสภาผู้แทนราษฎรวินิจฉัยว่า เป็นร่างการเงิน), or
-  -   \`-nm\` for non-monetary one (ประธานสภาผู้แทนราษฎรวินิจฉัยว่า ไม่เป็นร่างการเงิน).`,
+- \`-m\` for the draft which Speaker of Parliament considered as a monetary draft (ประธานสภาผู้แทนราษฎรวินิจฉัยว่า เป็นร่างการเงิน), or
+- \`-nm\` for non-monetary one (ประธานสภาผู้แทนราษฎรวินิจฉัยว่า ไม่เป็นร่างการเงิน).`,
 };
 
 async function handler(ctx) {
@@ -41,7 +41,7 @@ async function handler(ctx) {
     let title = 'ร่างพระราชบัญญัติที่เปิดรับฟังความคิดเห็นตามมาตรา 77 ของรัฐธรรมนูญ';
 
     if (type) {
-        const [presenter, isMonetaryAct = ''] = type.split('-');
+        const [presenter, isMonetaryAct = ''] = type.split('-', 2);
 
         title +=
             {
@@ -125,7 +125,7 @@ async function handler(ctx) {
                 item.description = $('.des').first().html();
 
                 // Act draft status
-                const [, presenter, monetaryType] = $('.type77 h5').text().split(' ');
+                const [, presenter, monetaryType] = $('.type77 h5').text().split(' ', 3);
                 item.category = [
                     ...item.category,
                     $('.container-fluid .bg-status .col-md-8.p-0 h5 span,a')
@@ -136,19 +136,19 @@ async function handler(ctx) {
                 ];
 
                 const voteText = $('.row.bg-status .col-md-4.text-right').text().trim();
-                const voteRegex = /^ผู้แสดงความคิดเห็น\s*(\d+)\s*คน\s*(\d+(?:\.\d+)?)%\s*(\d+(?:\.\d+)?)%/g.exec(voteText);
+                const voteRegex = /^ผู้แสดงความคิดเห็น\s*(\d+)\s*คน\s*(\d+(?:\.\d+)?)%\s*\d+(?:\.\d+)?%/.exec(voteText);
 
                 if (voteRegex) {
                     const voteTotal = Number.parseInt(voteRegex[0]);
-                    const upvotePercent = Number.parseFloat(voteRegex[1]);
-                    const downvotePercent = Number.parseFloat(voteRegex[2]);
+                    const upvotePercent = Number(voteRegex[1]);
+                    const downvotePercent = Number(voteRegex[2]);
 
                     item.upvotes = Number.parseInt((upvotePercent / 100) * voteTotal);
                     item.downvotes = Number.parseInt((downvotePercent / 100) * voteTotal);
                 }
 
                 const dateText = $('.banner-detail .banner-detail-caption .blockquote p:last-child').text();
-                const dateRegex = /^รับฟังตั้งแต่วันที่\s(\d{1,2})\s*([\u0E00-\u0E7F]+)\s*(\d{4})/g.exec(dateText);
+                const dateRegex = /^รับฟังตั้งแต่วันที่\s(\d{1,2})\s*([\u{0E00}-\u{0E7F}]+)\s*(\d{4})/u.exec(dateText);
 
                 if (dateRegex) {
                     item.pubDate = timezone(
@@ -170,7 +170,7 @@ async function handler(ctx) {
                             }[dateRegex[2].trim()],
                             Number.parseInt(dateRegex[1])
                         ),
-                        +7
+                        7
                     );
                 }
 

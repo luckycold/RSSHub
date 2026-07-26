@@ -31,7 +31,7 @@ export const route: Route = {
     maintainers: ['nczitzk'],
     handler,
     description: `::: tip
-  更多热帖版面参见 [论坛](https://bbs.hupu.com)
+更多热帖版面参见 [论坛](https://bbs.hupu.com)
 :::`,
 };
 
@@ -56,7 +56,7 @@ async function handler(ctx) {
             return {
                 title: item.text(),
                 link: `https://m.hupu.com/bbs${item.attr('href')}`,
-                pubDate: timezone(parseDate(item.parent().parent().find('.post-time').text(), 'MM-DD HH:mm'), +8),
+                pubDate: timezone(parseDate(item.parent().parent().find('.post-time').text(), 'MM-DD HH:mm'), 8),
             };
         });
 
@@ -73,15 +73,15 @@ async function handler(ctx) {
 
                     const videos = [];
 
-                    content('.hupu-post-video').each(function () {
+                    content('.hupu-post-video').each((_, el) => {
                         videos.push({
-                            source: content(this).attr('src'),
-                            poster: content(this).attr('poster'),
+                            source: content(el).attr('src'),
+                            poster: content(el).attr('poster'),
                         });
                     });
 
                     item.author = content('.bbs-user-wrapper-content-name-span').first().text();
-                    item.pubDate = item.pubDate ?? timezone(parseRelativeDate(content('.second-line-user-info').first().text()), +8);
+                    item.pubDate ??= timezone(parseRelativeDate(content('.second-line-user-info').first().text()), 8);
                     const description = content('.bbs-content').first().html();
                     item.description = renderToString(
                         <>

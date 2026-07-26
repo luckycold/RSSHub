@@ -36,7 +36,7 @@ async function handler() {
 
     const items = await Promise.all(
         Object.keys(category_dict).map(async () => {
-            const response = await got(`https://webplus.nju.edu.cn/_s25/zbcg/list.psp`);
+            const response = await got('https://webplus.nju.edu.cn/_s25/zbcg/list.psp');
 
             const data = response.data;
             const $ = load(data);
@@ -48,7 +48,7 @@ async function handler() {
                 return {
                     title: item.find('a').attr('title'),
                     link: 'https://webplus.nju.edu.cn' + item.find('a').attr('href'),
-                    pubDate: timezone(parseDate(item.find('span').last().text(), 'YYYY-MM-DD'), +8),
+                    pubDate: timezone(parseDate(item.find('span').last().text(), 'YYYY-MM-DD'), 8),
                     category: category_dict[0],
                 };
             });

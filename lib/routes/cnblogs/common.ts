@@ -28,7 +28,7 @@ export const route: Route = {
     maintainers: ['hujingnb'],
     handler,
     url: 'www.cnblogs.com/pick',
-    description: `在博客园主页的分类出可查看所有类型。例如，go 的分类地址为: \`https://www.cnblogs.com/cate/go/\`, 则: [\`/cnblogs/cate/go\`](https://rsshub.app/cnblogs/cate/go)`,
+    description: '在博客园主页的分类出可查看所有类型。例如，go 的分类地址为: `https://www.cnblogs.com/cate/go/`, 则: [`/cnblogs/cate/go`](https://rsshub.app/cnblogs/cate/go)',
 };
 
 async function handler(ctx) {
@@ -44,7 +44,7 @@ async function handler(ctx) {
             return {
                 title: item.find('.post-item-title').text(),
                 link: item.find('.post-item-title').attr('href'),
-                pubDate: timezone(parseDate(item.find('.post-item-foot .post-meta-item span').text() || item.find('.editorpick-item-meta').text(), ['YYYY-MM-DD HH:mm', 'YYYY-MM-DD']), +8),
+                pubDate: timezone(parseDate(item.find('.post-item-foot .post-meta-item span').text() || item.find('.editorpick-item-meta').text(), ['YYYY-MM-DD HH:mm', 'YYYY-MM-DD']), 8),
                 description: item.find('.post-item-summary').text(),
                 author: item.find('.post-item-author span').text(),
             };

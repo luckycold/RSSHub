@@ -50,7 +50,7 @@ async function handler(ctx) {
             item = $(item);
             // link原来长这样：'../info/1196/13990.htm'
             const link = item.find('a').attr('href').replace(/^\.\./, 'http://www.xaut.edu.cn');
-            const pubDate = timezone(parseDate(item.find('div.time').text().trim()), +8);
+            const pubDate = timezone(parseDate(item.find('div.time').text().trim()), 8);
             const title = item.find('h5').text();
 
             return {
@@ -66,7 +66,7 @@ async function handler(ctx) {
         // 源链接
         link: 'http://www.xaut.edu.cn',
         // 源说明
-        description: `西安理工大学官网-` + dic_title[category],
+        description: '西安理工大学官网-' + dic_title[category],
         // 遍历此前获取的数据
         item: await Promise.all(
             list.map((item) =>

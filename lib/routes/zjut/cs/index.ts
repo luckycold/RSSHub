@@ -33,8 +33,8 @@ export const route: Route = {
         },
     ],
     description: `| 新闻资讯 | 学术动态 | 通知公告 |
-| ------- | ------- | ------- |
-| 54      | 55      | 53      |`,
+| -------- | -------- | -------- |
+| 54       | 55       | 53       |`,
 };
 
 async function handler(ctx) {
@@ -56,7 +56,7 @@ async function handler(ctx) {
                 } else if (!link.startsWith('http')) {
                     link = 'https://' + host + '/jsp/' + link;
                 }
-                const pubDate = timezone(parseDate(cheerioItem.find('.datetime').text().slice(1, -1)), +8);
+                const pubDate = timezone(parseDate(cheerioItem.find('.datetime').text().slice(1, -1)), 8);
 
                 return {
                     title,

@@ -33,13 +33,13 @@ export const route: Route = {
 | -------- | -------- | -------- | -------- | -------- | -------- |
 | work     | enroll   | train    | degree   | exchange | xsjy     |
 
-  当\`type\`为\`enroll\`, \`num\`可选字段:
+当\`type\`为\`enroll\`, \`num\`可选字段:
 
 | 58       | 59       | 60         | 61       | 62       |
 | -------- | -------- | ---------- | -------- | -------- |
 | 博士招生 | 硕士招生 | 港澳台招生 | 考点信息 | 院系动态 |
 
-  当\`type\`为\`exchange\`, \`num\`可选字段:
+当\`type\`为\`exchange\`, \`num\`可选字段:
 
 | 67             | 68             | 69             | 70             | 71             |
 | -------------- | -------------- | -------------- | -------------- | -------------- |
@@ -70,7 +70,7 @@ async function handler(ctx) {
             return {
                 title: item.find('.title').text().trim(),
                 link: `${item.attr('href').startsWith('http') ? '' : rootUrl}${item.attr('href')}`,
-                pubDate: timezone(parseDate(`${year}-${day}`, 'YYYY-MM-DD'), +8),
+                pubDate: timezone(parseDate(`${year}-${day}`, 'YYYY-MM-DD'), 8),
             };
         });
 

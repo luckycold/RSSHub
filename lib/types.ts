@@ -26,6 +26,7 @@ export type Category =
     | 'study'
     | 'journal'
     | 'finance'
+    | 'sport'
     | 'other';
 
 // rss
@@ -49,6 +50,7 @@ export type DataItem = {
         html: string;
         text: string;
     };
+    summary?: string;
     image?: string;
     banner?: string;
     updated?: number | string | Date;
@@ -330,7 +332,7 @@ interface RouteItem {
               }>
             | false;
 
-        /** set to `true` if the feed uses puppeteer */
+        /** set to `true` if the feed uses browser automation */
         requirePuppeteer?: boolean;
 
         /** set to `true` if the target website has an anti-crawler mechanism */

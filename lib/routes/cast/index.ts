@@ -27,7 +27,7 @@ async function parsePage(html: string) {
                 return cache.tryGet(articleUrl, async () => {
                     const res = await got.get<string>(articleUrl!);
                     const article = load(res.data);
-                    const pubDate = timezone(parseDate(article('meta[name=PubDate]').attr('content')!, 'YYYY-MM-DD HH:mm'), +8);
+                    const pubDate = timezone(parseDate(article('meta[name=PubDate]').attr('content')!, 'YYYY-MM-DD HH:mm'), 8);
 
                     return {
                         title: title.text(),
@@ -63,7 +63,7 @@ export const route: Route = {
     maintainers: ['KarasuShin', 'TonyRL'],
     handler,
     description: `::: tip
-  在路由末尾处加上 \`?limit=限制获取数目\` 来限制获取条目数量，默认值为\`10\`
+在路由末尾处加上 \`?limit=限制获取数目\` 来限制获取条目数量，默认值为\`10\`
 :::
 
 | 分类     | 编码 |

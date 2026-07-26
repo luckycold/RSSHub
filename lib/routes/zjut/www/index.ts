@@ -32,15 +32,15 @@ export const route: Route = {
             target: '/www/:type',
         },
     ],
-    description: `| 板块 | 参数 |
-| ------- | ------- |
-| 学术动态 | xsdt_4662 |
-| 三创·人物 | 4527 |
-| 通知公告 | 4528 |
-| 美誉工大 | 5389 |
-| 智库工大 | 5390 |
-| 工大校历 | 4520 |
-| 校区班车 | xqbc |`,
+    description: `| 板块       | 参数       |
+| ---------- | ---------- |
+| 学术动态   | xsdt\\_4662 |
+| 三创・人物 | 4527       |
+| 通知公告   | 4528       |
+| 美誉工大   | 5389       |
+| 智库工大   | 5390       |
+| 工大校历   | 4520       |
+| 校区班车   | xqbc       |`,
 };
 
 async function handler(ctx) {
@@ -71,7 +71,7 @@ async function handler(ctx) {
                         pubDate: Date.now(),
                     };
                 }
-                const pubDate = timezone(parseDate(dateText), +8);
+                const pubDate = timezone(parseDate(dateText), 8);
 
                 return {
                     title,

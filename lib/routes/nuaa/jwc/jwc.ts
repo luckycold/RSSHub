@@ -7,7 +7,7 @@ import { parseDate } from '@/utils/parse-date';
 
 import getCookie from '../utils/pypasswaf';
 
-const host = 'http://aao.nuaa.edu.cn/';
+const host = 'https://aao.nuaa.edu.cn/';
 
 const map = new Map([
     ['tzgg', { title: '通知公告 | 南京航空航天大学教务处', suffix: '8222/list.htm' }],
@@ -41,7 +41,7 @@ export const route: Route = {
 async function handler(ctx) {
     const type = ctx.req.param('type');
     const suffix = map.get(type).suffix;
-    const getDescription = Boolean(ctx.req.param('getDescription')) || false;
+    const getDescription = Boolean(ctx.req.param('getDescription'));
 
     const link = new URL(suffix, host).href;
     const cookie = await getCookie(host);
@@ -53,14 +53,14 @@ async function handler(ctx) {
     const response = await got(link, gotConfig);
     const $ = load(response.data);
 
-    const list = $('#wp_news_w8 ul li')
+    const list = $('#news_list .news_ul .p-list-item a')
         .slice(0, 10)
         .toArray()
         .map((element) => {
             const info = {
-                title: $(element).find('a').text(),
-                link: $(element).find('a').attr('href'),
-                date: $(element).find('span').text(),
+                title: $(element).find('.text .title').text(),
+                link: $(element).attr('href'),
+                date: $(element).find('.date em').text() + '-' + $(element).find('.date span').text(),
             };
             return info;
         });

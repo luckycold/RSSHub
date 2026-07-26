@@ -62,12 +62,12 @@ export const route: Route = {
 | ---- | ----------- | ----- | ------- | -------- | -------- |
 | all  | review      | story | fengwen | redian   | gundong  |
 
-  home = 评论 & 研究 + 要闻 + 风闻
+home = 评论 & 研究 + 要闻 + 风闻
 
-  others = 热点新闻 + 滚动新闻
+others = 热点新闻 + 滚动新闻
 
 ::: tip
-  观察者网首页左中右的三个 column 分别对应 **评论 & 研究**、**要闻**、**风闻** 三个部分。
+观察者网首页左中右的三个 column 分别对应 **评论 & 研究**、**要闻**、**风闻** 三个部分。
 :::`,
 };
 
@@ -82,7 +82,7 @@ async function handler(ctx) {
 
     // 'review', 'story' and 'fengwen' come from homepage.
 
-    if (category === 'review' || category === 'story' || category === 'fengwen' || category === 'all' || category === 'home') {
+    if (['review', 'story', 'fengwen', 'all', 'home'].includes(category)) {
         const response = await got({
             method: 'get',
             url: rootUrl,
@@ -117,7 +117,7 @@ async function handler(ctx) {
 
     // 'redian' and 'gundong' come from api.
 
-    if (category === 'redian' || category === 'all' || category === 'others') {
+    if (['redian', 'all', 'others'].includes(category)) {
         const response = await got({
             method: 'get',
             url: `${rootUrl}/api/redian.htm`,
@@ -131,7 +131,7 @@ async function handler(ctx) {
             .slice(0, category === 'all' ? total / 3 : total);
     }
 
-    if (category === 'gundong' || category === 'all' || category === 'others') {
+    if (['gundong', 'all', 'others'].includes(category)) {
         const response = await got({
             method: 'get',
             url: `${rootUrl}/api/gundong.htm`,
@@ -173,7 +173,7 @@ async function handler(ctx) {
                 item.pubDate =
                     dateMatch === null
                         ? parseRelativeDate(content('.time1').text()) // PubDates of posts in 'fengwen' are in an informal format.
-                        : timezone(parseDate(dateMatch[1]), +8);
+                        : timezone(parseDate(dateMatch[1]), 8);
 
                 item.description = content('.all-txt').html() || content('.article-txt-content').html();
                 item.author = content('.author-intro p a').text() || content('.article-content div div h4 a').text() || content('.editor-intro p a').text() || content('.left-main > div.time.fix > span').eq(2).text();

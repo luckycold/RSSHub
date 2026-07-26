@@ -63,7 +63,7 @@ async function handler() {
                 title,
                 link: new URL(link, baseUrl).href,
                 description: description || title,
-                pubDate: timezone(parseDate(dateText, 'YYYY-MM-DD'), +8),
+                pubDate: timezone(parseDate(dateText, 'YYYY-MM-DD'), 8),
             };
         })
         .filter(Boolean);
@@ -88,8 +88,8 @@ async function handler() {
 
                     if (content) {
                         const $content = load(content);
-                        $content('a').each(function () {
-                            const a = $(this);
+                        $content('a').each((_, el) => {
+                            const a = $(el);
                             const href = a.attr('href');
                             if (href && !href.startsWith('http')) {
                                 a.attr('href', new URL(href, baseUrl).href);

@@ -12,7 +12,7 @@ export const route: Route = {
     handler,
     example: '/hko/earthquake',
     categories: ['forecast'],
-    description: '来自香港天文台的全球5级以上地震记录',
+    description: '来自香港天文台的全球 5 级以上地震记录',
 };
 
 async function handler() {
@@ -44,7 +44,7 @@ async function handler() {
             return {
                 title: `[震級:${degree}] [地點:${city}]`,
                 description: `${citystring}, ${latAndLon}`,
-                pubDate: timezone(parseDate(hktDate + hktTime, 'YYYYMMDDHHmm'), +8),
+                pubDate: timezone(parseDate(hktDate + hktTime, 'YYYYMMDDHHmm'), 8),
             };
         });
 

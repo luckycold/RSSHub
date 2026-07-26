@@ -35,13 +35,13 @@ export const route: Route = {
         supportPodcast: false,
         supportScihub: false,
     },
-    description: `
-::: tip
+    description: `::: tip
 仅支持自建，您需要设置以下配置才能正常使用：
--   河畔cookie: \`UESTC_BBS_COOKIE\`
--   Header中的授权字段: \`UESTC_BBS_AUTH_KEY\`
-:::
-`,
+
+- 河畔 cookie: \`UESTC_BBS_COOKIE\`
+- Header 中的授权字段: \`UESTC_BBS_AUTH_KEY\`
+
+:::`,
     radar: [
         {
             source: ['bbs.uestc.edu.cn/*'],
@@ -80,7 +80,7 @@ export const route: Route = {
                         author: item.author,
                         category: item.label,
                         img: item.icon,
-                        pubDate: timezone(parseDate(item.dateline), +8),
+                        pubDate: timezone(parseDate(item.dateline), 8),
                         description: item.description,
                     };
                 })
